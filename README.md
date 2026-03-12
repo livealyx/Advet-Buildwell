@@ -1,7 +1,5 @@
 Based on the uploaded project file (`changelog.html`), your project appears to be a **luxury real-estate website UI for “Advet Buildwell”** built using **HTML + TailwindCSS** with multiple public pages and admin dashboards. Below is a **complete professional `README.md`** you can use in your GitHub repository.
 
-You can copy this directly into `README.md`.
-
 ---
 
 # Advet Buildwell – Real Estate Website
