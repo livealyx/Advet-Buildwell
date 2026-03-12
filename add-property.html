@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Property | Advet Buildwell</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#FDFCF9',
+                        foreground: '#2A2925',
+                        muted: '#6D685C',
+                        surface: '#F4F0E6',
+                        accent: { DEFAULT: '#899178', dark: '#6E755F' },
+                        sand: '#DFD8CC'
+                    },
+                    fontFamily: {
+                        sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+                        serif: ['"Cormorant Garamond"', 'Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: theme('colors.background'); color: theme('colors.foreground'); -webkit-font-smoothing: antialiased; }
+        .form-reveal { opacity: 0; transform: translateY(20px); animation: fadeIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+        input:focus, textarea:focus, select:focus { outline: none; border-color: theme('colors.accent'); }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: theme('colors.sand'); border-radius: 10px; }
+    </style>
+</head>
+<body class="font-sans font-light min-h-screen bg-[#F4F1ED] flex">
+
+    <!-- Sidebar -->
+    <aside class="w-72 bg-foreground text-background flex flex-col hidden lg:flex">
+        <div class="p-12">
+            <a href="index.html" class="text-xl font-serif font-medium tracking-wide flex items-center gap-3">
+                <svg class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 3l8 7L12 21l-8-11 8-7z" /><path d="M12 3v18" /><path d="M4 10l8 4 8-4" /></svg>
+                <span>Advet Studio</span>
+            </a>
+        </div>
+        
+        <nav class="flex-grow px-6 space-y-2">
+            <a href="admin-dashboard.html" class="flex items-center gap-4 px-6 py-4 rounded-2xl text-xs font-medium uppercase tracking-[0.2em] text-background/50 hover:bg-background/5 hover:text-background transition-all">
+                Overview
+            </a>
+            <a href="admin-listings.html" class="flex items-center gap-4 px-6 py-4 rounded-2xl text-xs font-medium uppercase tracking-[0.2em] text-background/50 hover:bg-background/5 hover:text-background transition-all">
+                All Listings
+            </a>
+            <a href="add-property.html" class="flex items-center gap-4 px-6 py-4 bg-background/5 rounded-2xl text-xs font-medium uppercase tracking-[0.2em] text-accent">
+                Add Property
+            </a>
+            <a href="admin-inquiries.html" class="flex items-center gap-4 px-6 py-4 rounded-2xl text-xs font-medium uppercase tracking-[0.2em] text-background/50 hover:bg-background/5 hover:text-background transition-all">
+                Inquiries
+            </a>
+        </nav>
+
+        <div class="mt-auto p-12 border-t border-background/10">
+            <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full bg-accent flex items-center justify-center font-bold">AV</div>
+                <div>
+                    <p class="text-[10px] font-bold uppercase tracking-widest">Admin</p>
+                    <a href="login.html" class="text-[10px] text-background/40 hover:text-background">Sign Out</a>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="flex-grow p-8 sm:p-12 overflow-y-auto">
+        <div class="max-w-4xl mx-auto">
+            
+            <!-- Header -->
+            <div class="mb-12 form-reveal">
+                <p class="text-[10px] font-bold uppercase tracking-[0.4em] text-accent mb-4">Curation Portal</p>
+                <h1 class="text-4xl md:text-5xl font-serif font-light mb-4">Add New <span class="italic text-muted">Sanctuary.</span></h1>
+                <p class="text-sm text-muted max-w-xl">Every listing must meet our rigorous standards for architectural integrity and spatial harmony.</p>
+            </div>
+
+            <form class="space-y-12 form-reveal" style="animation-delay: 0.1s;">
+                
+                <!-- Section: Core Details -->
+                <div class="bg-background p-8 md:p-12 rounded-[2.5rem] shadow-sm border border-sand/40">
+                    <h2 class="text-xs uppercase tracking-[0.3em] font-bold text-accent mb-10 border-b border-sand pb-4">Core Attributes</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="col-span-1 md:col-span-2">
+                            <label class="block text-[10px] uppercase tracking-widest font-bold text-muted mb-3 ml-1">Property Title</label>
+                            <input type="text" placeholder="e.g. The Obsidian Villa" class="w-full px-6 py-4 bg-surface/30 border border-sand/30 rounded-2xl text-sm transition-all focus:bg-background">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-widest font-bold text-muted mb-3 ml-1">Listing Type</label>
+                            <select class="w-full px-6 py-4 bg-surface/30 border border-sand/30 rounded-2xl text-sm appearance-none transition-all focus:bg-background">
+                                <option>Buying (For Sale)</option>
+                                <option>Leasing (For Rent)</option>
+                                <option>Off-Market (Private)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-widest font-bold text-muted mb-3 ml-1">Proposed Price</label>
+                            <input type="text" placeholder="$0.00" class="w-full px-6 py-4 bg-surface/30 border border-sand/30 rounded-2xl text-sm transition-all focus:bg-background">
+                        </div>
+                        <div class="col-span-1 md:col-span-2">
+                            <label class="block text-[10px] uppercase tracking-widest font-bold text-muted mb-3 ml-1">Location Reference</label>
+                            <input type="text" placeholder="e.g. Silverlake Hills, CA" class="w-full px-6 py-4 bg-surface/30 border border-sand/30 rounded-2xl text-sm transition-all focus:bg-background">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section: Spatial Specs -->
+                <div class="bg-background p-8 md:p-12 rounded-[2.5rem] shadow-sm border border-sand/40">
+                    <h2 class="text-xs uppercase tracking-[0.3em] font-bold text-accent mb-10 border-b border-sand pb-4">Spatial Metrics</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-widest font-bold text-muted mb-3 ml-1">Bedrooms</label>
+                            <input type="number" class="w-full px-6 py-4 bg-surface/30 border border-sand/30 rounded-2xl text-sm transition-all focus:bg-background">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-widest font-bold text-muted mb-3 ml-1">Bathrooms</label>
+                            <input type="number" step="0.5" class="w-full px-6 py-4 bg-surface/30 border border-sand/30 rounded-2xl text-sm transition-all focus:bg-background">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-widest font-bold text-muted mb-3 ml-1">Total SQFT</label>
+                            <input type="text" placeholder="0000" class="w-full px-6 py-4 bg-surface/30 border border-sand/30 rounded-2xl text-sm transition-all focus:bg-background">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-widest font-bold text-muted mb-3 ml-1">Lot Size</label>
+                            <input type="text" placeholder="Acres" class="w-full px-6 py-4 bg-surface/30 border border-sand/30 rounded-2xl text-sm transition-all focus:bg-background">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section: Narrative -->
+                <div class="bg-background p-8 md:p-12 rounded-[2.5rem] shadow-sm border border-sand/40">
+                    <h2 class="text-xs uppercase tracking-[0.3em] font-bold text-accent mb-10 border-b border-sand pb-4">Narrative & Soul</h2>
+                    <div>
+                        <label class="block text-[10px] uppercase tracking-widest font-bold text-muted mb-3 ml-1">Description</label>
+                        <textarea rows="6" placeholder="Describe the frequency and flow of the space..." class="w-full px-6 py-4 bg-surface/30 border border-sand/30 rounded-3xl text-sm transition-all focus:bg-background custom-scrollbar resize-none"></textarea>
+                    </div>
+                </div>
+
+                <!-- Section: Visuals -->
+                <div class="bg-background p-8 md:p-12 rounded-[2.5rem] shadow-sm border border-sand/40">
+                    <h2 class="text-xs uppercase tracking-[0.3em] font-bold text-accent mb-10 border-b border-sand pb-4">Visual Documentation</h2>
+                    <div class="border-2 border-dashed border-sand/50 rounded-[2rem] p-12 text-center group hover:border-accent hover:bg-surface/10 transition-all cursor-pointer">
+                        <svg class="w-12 h-12 text-sand group-hover:text-accent mx-auto mb-4 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 002-2H4a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                        <p class="text-xs uppercase tracking-widest font-bold text-muted group-hover:text-foreground">Upload High-Res Assets</p>
+                        <p class="text-[10px] text-muted/60 mt-2">RAW, JPG, or PNG · Max 50MB</p>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="flex flex-col sm:flex-row gap-4 pt-8">
+                    <button type="submit" class="flex-1 py-5 bg-foreground text-background rounded-2xl text-xs font-bold uppercase tracking-[0.2em] transform hover:-translate-y-1 transition-all shadow-xl hover:shadow-2xl">
+                        Publish Sanctuary
+                    </button>
+                    <button type="button" class="px-10 py-5 border border-sand text-muted rounded-2xl text-xs font-bold uppercase tracking-[0.2em] hover:bg-surface transition-all">
+                        Save to Archives
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-foreground text-background py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-[10px] uppercase tracking-[0.4em] font-medium text-surface/20">Authorized Access Only · Advet Buildwell © 2026</p>
+        </div>
+    </footer>
+
+</body>
+</html>

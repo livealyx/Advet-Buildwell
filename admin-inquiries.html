@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inquiries | Advet Buildwell</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#FDFCF9',
+                        foreground: '#2A2925',
+                        muted: '#6D685C',
+                        surface: '#F4F0E6',
+                        accent: { DEFAULT: '#899178', dark: '#6E755F' },
+                        sand: '#DFD8CC'
+                    },
+                    fontFamily: {
+                        sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+                        serif: ['"Cormorant Garamond"', 'Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans font-light min-h-screen bg-[#F4F1ED] flex">
+
+    <!-- Sidebar -->
+    <aside class="w-72 bg-foreground text-background flex flex-col hidden lg:flex">
+        <div class="p-12">
+            <a href="index.html" class="text-xl font-serif font-medium tracking-wide flex items-center gap-3">
+                <svg class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 3l8 7L12 21l-8-11 8-7z" /><path d="M12 3v18" /><path d="M4 10l8 4 8-4" /></svg>
+                <span>Advet Studio</span>
+            </a>
+        </div>
+        
+        <nav class="flex-grow px-6 space-y-2">
+            <a href="admin-dashboard.html" class="flex items-center gap-4 px-6 py-4 rounded-2xl text-xs font-medium uppercase tracking-[0.2em] text-background/50 hover:bg-background/5 hover:text-background transition-all">
+                Overview
+            </a>
+            <a href="admin-listings.html" class="flex items-center gap-4 px-6 py-4 rounded-2xl text-xs font-medium uppercase tracking-[0.2em] text-background/50 hover:bg-background/5 hover:text-background transition-all">
+                All Listings
+            </a>
+            <a href="add-property.html" class="flex items-center gap-4 px-6 py-4 rounded-2xl text-xs font-medium uppercase tracking-[0.2em] text-background/50 hover:bg-background/5 hover:text-background transition-all">
+                Add Property
+            </a>
+            <a href="admin-inquiries.html" class="flex items-center gap-4 px-6 py-4 bg-background/5 rounded-2xl text-xs font-medium uppercase tracking-[0.2em] text-accent">
+                Inquiries
+            </a>
+        </nav>
+
+        <div class="mt-auto p-12 border-t border-background/10">
+            <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full bg-accent flex items-center justify-center font-bold">AV</div>
+                <div>
+                    <p class="text-[10px] font-bold uppercase tracking-widest">Admin</p>
+                    <a href="login.html" class="text-[10px] text-background/40 hover:text-background">Sign Out</a>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-grow p-8 sm:p-12 overflow-y-auto">
+        <header class="flex justify-between items-end mb-16">
+            <div>
+                <p class="text-[10px] font-bold uppercase tracking-[0.4em] text-accent mb-4">Advisory Communications</p>
+                <h1 class="text-4xl font-serif font-light mb-4 text-foreground">Client <span class="italic text-muted">Inquiries.</span></h1>
+                <p class="text-sm text-muted max-w-xl">Respond to and manage interest from prospective stewards and partners.</p>
+            </div>
+            <div class="flex gap-4">
+                <button class="px-8 py-4 border border-sand text-muted rounded-2xl text-xs font-bold uppercase tracking-widest hover:bg-surface transition-all">
+                    Export Data
+                </button>
+            </div>
+        </header>
+
+        <!-- Inquiries Table -->
+        <div class="bg-background rounded-[2.5rem] shadow-sm border border-sand/40 overflow-hidden">
+            <div class="p-10 border-b border-sand/40 flex justify-between items-center bg-surface/10">
+                <div class="flex gap-8">
+                    <button class="text-xs font-bold uppercase tracking-widest text-foreground border-b-2 border-accent pb-1">All (12)</button>
+                    <button class="text-xs font-bold uppercase tracking-widest text-muted hover:text-foreground transition-all">Pending (4)</button>
+                    <button class="text-xs font-bold uppercase tracking-widest text-muted hover:text-foreground transition-all">Responded (8)</button>
+                </div>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left">
+                    <thead>
+                        <tr class="bg-surface/30">
+                            <th class="px-10 py-6 text-[10px] uppercase tracking-widest font-bold text-muted">Date Received</th>
+                            <th class="px-10 py-6 text-[10px] uppercase tracking-widest font-bold text-muted">Steward Name</th>
+                            <th class="px-10 py-6 text-[10px] uppercase tracking-widest font-bold text-muted">Interest Area</th>
+                            <th class="px-10 py-6 text-[10px] uppercase tracking-widest font-bold text-muted">Status</th>
+                            <th class="px-10 py-6 text-[10px] uppercase tracking-widest font-bold text-muted text-right">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-sand/20">
+                        <!-- Row 1 -->
+                        <tr class="hover:bg-surface/10 transition-colors">
+                            <td class="px-10 py-8">
+                                <p class="text-sm font-medium">March 12, 2024</p>
+                                <p class="text-[10px] text-muted">10:45 AM</p>
+                            </td>
+                            <td class="px-10 py-8">
+                                <p class="text-sm font-bold">Elena Rodriguez</p>
+                                <p class="text-[10px] text-muted italic">elena@example.com</p>
+                            </td>
+                            <td class="px-10 py-8">
+                                <p class="text-sm font-medium">The Obsidian Villa</p>
+                                <p class="text-[10px] text-muted">Acquisition Inquiry</p>
+                            </td>
+                            <td class="px-10 py-8">
+                                <span class="bg-accent/10 border border-accent/20 text-accent text-[9px] uppercase font-bold tracking-widest px-3 py-1 rounded">High Priority</span>
+                            </td>
+                            <td class="px-10 py-8 text-right">
+                                <button class="text-[10px] uppercase font-bold tracking-widest text-foreground underline italic hover:text-accent transition-all">View Message</button>
+                            </td>
+                        </tr>
+                        <!-- Row 2 -->
+                        <tr class="hover:bg-surface/10 transition-colors">
+                            <td class="px-10 py-8">
+                                <p class="text-sm font-medium">March 11, 2024</p>
+                                <p class="text-[10px] text-muted">04:20 PM</p>
+                            </td>
+                            <td class="px-10 py-8">
+                                <p class="text-sm font-bold">Marcus Thorne</p>
+                                <p class="text-[10px] text-muted italic">m.thorne@artcurate.com</p>
+                            </td>
+                            <td class="px-10 py-8">
+                                <p class="text-sm font-medium">General Advisory</p>
+                                <p class="text-[10px] text-muted">Consultation Request</p>
+                            </td>
+                            <td class="px-10 py-8">
+                                <span class="bg-sand border border-sand/50 text-muted text-[9px] uppercase font-bold tracking-widest px-3 py-1 rounded">Followed Up</span>
+                            </td>
+                            <td class="px-10 py-8 text-right">
+                                <button class="text-[10px] uppercase font-bold tracking-widest text-foreground underline italic hover:text-accent transition-all">View Thread</button>
+                            </td>
+                        </tr>
+                        <!-- Row 3 -->
+                        <tr class="hover:bg-surface/10 transition-colors">
+                            <td class="px-10 py-8">
+                                <p class="text-sm font-medium">March 10, 2024</p>
+                                <p class="text-[10px] text-muted">09:15 AM</p>
+                            </td>
+                            <td class="px-10 py-8">
+                                <p class="text-sm font-bold">Liam Sterling</p>
+                                <p class="text-[10px] text-muted italic">l.sterling@invest.co</p>
+                            </td>
+                            <td class="px-10 py-8">
+                                <p class="text-sm font-medium">Cloud Pavilion</p>
+                                <p class="text-[10px] text-muted">Lease Interest</p>
+                            </td>
+                            <td class="px-10 py-8">
+                                <span class="bg-sand border border-sand/50 text-muted text-[9px] uppercase font-bold tracking-widest px-3 py-1 rounded">Followed Up</span>
+                            </td>
+                            <td class="px-10 py-8 text-right">
+                                <button class="text-[10px] uppercase font-bold tracking-widest text-foreground underline italic hover:text-accent transition-all">View Thread</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

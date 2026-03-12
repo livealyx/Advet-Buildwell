@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curated Listings | Advet Buildwell</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#FDFCF9',
+                        foreground: '#2A2925',
+                        muted: '#6D685C',
+                        surface: '#F4F0E6',
+                        accent: { DEFAULT: '#899178', dark: '#6E755F' },
+                        sand: '#DFD8CC'
+                    },
+                    fontFamily: {
+                        sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+                        serif: ['"Cormorant Garamond"', 'Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: theme('colors.background'); color: theme('colors.foreground'); -webkit-font-smoothing: antialiased; }
+        .image-soft-clip { clip-path: inset(0 round 2rem); }
+        .reveal { opacity: 0; transform: translateY(20px); animation: fadeIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="font-sans font-light min-h-screen flex flex-col selection:bg-surface">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-background/80 backdrop-blur-md border-b border-sand/30">
+        <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
+            <div class="flex justify-between items-center h-24">
+                <a href="index.html" class="text-2xl font-serif font-medium tracking-wide flex items-center gap-3">
+                    <svg class="w-8 h-8 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 3l8 7L12 21l-8-11 8-7z" /><path d="M12 3v18" /><path d="M4 10l8 4 8-4" /></svg>
+                    Advet <span class="font-light text-muted">Buildwell</span>
+                </a>
+                <div class="hidden md:flex space-x-12 items-center">
+                    <a href="about.html" class="text-sm tracking-wide text-foreground/80 hover:text-accent transition-colors">About</a>
+                    <a href="philosophy.html" class="text-sm tracking-wide text-foreground/80 hover:text-accent transition-colors">Philosophy</a>
+                    <a href="listings.html" class="text-sm tracking-wide text-accent transition-colors">Listings</a>
+                    <a href="spaces.html" class="text-sm tracking-wide text-foreground/80 hover:text-accent transition-colors">Spaces</a>
+                    <a href="stories.html" class="text-sm tracking-wide text-foreground/80 hover:text-accent transition-colors">Stories</a>
+                    <a href="login.html" class="text-sm tracking-wide text-foreground/80 hover:text-accent transition-colors">Login</a>
+                    <a href="contact.html" class="px-6 py-3 rounded-full bg-surface text-foreground hover:bg-sand transition-colors text-sm font-medium border border-sand">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-48 pb-24">
+        <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
+            <!-- Header & Filter -->
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+                <div class="reveal">
+                    <p class="text-xs font-medium uppercase tracking-[0.3em] text-accent mb-4">Available Spaces</p>
+                    <h1 class="text-5xl md:text-6xl font-serif font-light">Curated <br><span class="italic text-muted">Residencies.</span></h1>
+                </div>
+                <div class="flex flex-wrap gap-4 reveal" style="animation-delay: 0.2s;">
+                    <button class="px-6 py-2.5 rounded-full border border-accent bg-accent text-white text-xs font-medium uppercase tracking-widest transition-all">All Objects</button>
+                    <button class="px-6 py-2.5 rounded-full border border-sand/50 text-muted text-xs font-medium uppercase tracking-widest hover:border-accent hover:text-accent transition-all">Buying</button>
+                    <button class="px-6 py-2.5 rounded-full border border-sand/50 text-muted text-xs font-medium uppercase tracking-widest hover:border-accent hover:text-accent transition-all">Leasing</button>
+                    <button class="px-6 py-2.5 rounded-full border border-sand/50 text-muted text-xs font-medium uppercase tracking-widest hover:border-accent hover:text-accent transition-all">Off-Market</button>
+                </div>
+            </div>
+
+            <!-- Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+                <!-- Listing Item 1 -->
+                <div class="group reveal" style="animation-delay: 0.3s;">
+                    <div class="relative aspect-[4/5] image-soft-clip overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Property" class="w-full h-full object-cover transition-transform duration-[8s] group-hover:scale-105">
+                        <div class="absolute top-6 left-6 flex flex-col gap-2">
+                            <span class="bg-background/90 backdrop-blur px-3 py-1 rounded text-[10px] uppercase font-bold tracking-widest text-accent">For Sale</span>
+                        </div>
+                    </div>
+                    <div class="px-2">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-2xl font-serif">The Obsidian Villa</h3>
+                            <span class="text-lg font-serif italic text-muted">$4,250,000</span>
+                        </div>
+                        <p class="text-xs uppercase tracking-widest text-muted mb-6">Silverlake Hills · 4 Bed · 4.5 Bath</p>
+                        <a href="property-detail.html" class="text-xs font-medium uppercase tracking-[0.2em] border-b border-sand pb-1 group-hover:border-accent transition-all">Explore Details</a>
+                    </div>
+                </div>
+
+                <!-- Listing Item 2 -->
+                <div class="group reveal" style="animation-delay: 0.4s;">
+                    <div class="relative aspect-[4/5] image-soft-clip overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d" alt="Property" class="w-full h-full object-cover transition-transform duration-[8s] group-hover:scale-105">
+                        <div class="absolute top-6 left-6 flex flex-col gap-2">
+                            <span class="bg-background/90 backdrop-blur px-3 py-1 rounded text-[10px] uppercase font-bold tracking-widest text-accent">For Lease</span>
+                        </div>
+                    </div>
+                    <div class="px-2">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-2xl font-serif">Cloud Pavilion</h3>
+                            <span class="text-lg font-serif italic text-muted">$18,500 /mo</span>
+                        </div>
+                        <p class="text-xs uppercase tracking-widest text-muted mb-6">Malibu Coast · 3 Bed · 3 Bath</p>
+                        <a href="property-detail.html" class="text-xs font-medium uppercase tracking-[0.2em] border-b border-sand pb-1 group-hover:border-accent transition-all">Explore Details</a>
+                    </div>
+                </div>
+
+                <!-- Listing Item 3 -->
+                <div class="group reveal" style="animation-delay: 0.5s;">
+                    <div class="relative aspect-[4/5] image-soft-clip overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1600210491892-03d94ac25676" alt="Property" class="w-full h-full object-cover transition-transform duration-[8s] group-hover:scale-105">
+                        <div class="absolute top-6 left-6 flex flex-col gap-2">
+                            <span class="bg-foreground text-background px-3 py-1 rounded text-[10px] uppercase font-bold tracking-widest">Off-Market</span>
+                        </div>
+                    </div>
+                    <div class="px-2 text-muted">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-2xl font-serif">Sanctuary 04</h3>
+                            <span class="text-sm uppercase tracking-widest font-medium">Private Inquiry</span>
+                        </div>
+                        <p class="text-xs uppercase tracking-widest text-muted/60 mb-6">Hidden Canyons · 5,200 SQFT</p>
+                        <a href="login.html" class="text-xs font-medium uppercase tracking-[0.2em] border-b border-sand pb-1 hover:border-accent transition-all">Member Access Required</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-foreground text-background pt-32 pb-12 w-full mt-auto">
+        <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
+            
+            <!-- Footer Links Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 mb-24">
+                <div>
+                    <h4 class="text-xs font-medium uppercase tracking-widest text-surface/30 mb-6">Pages</h4>
+                    <ul class="space-y-4">
+                        <li><a href="index.html" class="text-surface/60 hover:text-surface transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-surface/60 hover:text-surface transition-colors">About Us</a></li>
+                        <li><a href="philosophy.html" class="text-surface/60 hover:text-surface transition-colors">Philosophy</a></li>
+                        <li><a href="listings.html" class="text-surface/60 hover:text-surface transition-colors">Listings</a></li>
+                        <li><a href="spaces.html" class="text-surface/60 hover:text-surface transition-colors">Spaces</a></li>
+                        <li><a href="stories.html" class="text-surface/60 hover:text-surface transition-colors">Stories</a></li>
+                        <li><a href="login.html" class="text-surface/60 hover:text-surface transition-colors">Member Login</a></li>
+                        <li><a href="contact.html" class="text-surface/60 hover:text-surface transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-medium uppercase tracking-widest text-surface/30 mb-6">Social</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-surface/60 hover:text-surface transition-colors">Instagram</a></li>
+                        <li><a href="#" class="text-surface/60 hover:text-surface transition-colors">Pinterest</a></li>
+                        <li><a href="#" class="text-surface/60 hover:text-surface transition-colors">LinkedIn</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-2">
+                    <h4 class="text-xs font-medium uppercase tracking-widest text-surface/30 mb-6">Studio</h4>
+                    <p class="text-surface/60 font-light max-w-xs leading-relaxed">
+                        1042 Minimalist Way<br>
+                        Los Angeles, CA 90026<br><br>
+                        <a href="mailto:hello@advetbuildwell.com" class="border-b border-surface/20 hover:border-surface transition-colors">hello@advetbuildwell.com</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Copyright Line -->
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs text-surface/30 font-light gap-4 border-t border-surface/10 pt-8">
+                <div class="flex items-center gap-2">
+                     <svg class="w-5 h-5 text-accent opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3l8 7L12 21l-8-11 8-7z" />
+                    </svg>
+                    Advet Buildwell © 2026. Handcrafted for human emotion.
+                </div>
+                <div class="flex gap-8">
+                    <a href="#" class="hover:text-surface transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-surface transition-colors">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

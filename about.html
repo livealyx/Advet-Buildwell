@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Advet Buildwell</title>
+    
+    <!-- Local Tailwind CSS setup via CDN for instant preview -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#FDFCF9',
+                        foreground: '#2A2925',
+                        muted: '#6D685C',
+                        surface: '#F4F0E6',
+                        accent: {
+                            DEFAULT: '#899178',
+                            dark: '#6E755F'
+                        },
+                        sand: '#DFD8CC'
+                    },
+                    fontFamily: {
+                        sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+                        serif: ['"Cormorant Garamond"', 'Playfair Display', 'serif'],
+                    },
+                    borderRadius: {
+                        '4xl': '2rem',
+                    },
+                    transitionTimingFunction: {
+                        'soft': 'cubic-bezier(0.4, 0, 0.2, 1)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts for Humanized Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.foreground');
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .image-soft-clip {
+            clip-path: inset(0 round 2rem);
+        }
+
+        /* Subtle Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: soft-reveal 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+
+        @keyframes soft-reveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="font-sans font-light min-h-screen flex flex-col selection:bg-surface selection:text-foreground">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-background/80 backdrop-blur-md border-b border-sand/30 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
+            <div class="flex justify-between items-center h-24">
+                <a href="index.html" class="text-2xl font-serif font-medium tracking-wide flex items-center gap-3">
+                    <svg class="w-8 h-8 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3l8 7L12 21l-8-11 8-7z" />
+                        <path d="M12 3v18" />
+                        <path d="M4 10l8 4 8-4" />
+                    </svg>
+                    Advet <span class="font-light text-muted">Buildwell</span>
+                </a>
+                
+                <div class="hidden md:flex space-x-10 items-center">
+                    <a href="about.html" class="text-sm tracking-wide text-accent transition-colors">About Us</a>
+                    <a href="philosophy.html" class="text-sm tracking-wide text-foreground/80 hover:text-accent transition-colors">Philosophy</a>
+                    <a href="listings.html" class="text-sm tracking-wide text-foreground/80 hover:text-accent transition-colors">Listings</a>
+                    <a href="spaces.html" class="text-sm tracking-wide text-foreground/80 hover:text-accent transition-colors">Spaces</a>
+                    <a href="stories.html" class="text-sm tracking-wide text-foreground/80 hover:text-accent transition-colors">Stories</a>
+                    <a href="login.html" class="text-sm tracking-wide text-foreground/80 hover:text-accent transition-colors">Login</a>
+                    <a href="contact.html" class="px-6 py-3 rounded-full bg-surface text-foreground hover:bg-sand transition-colors text-sm font-medium border border-sand">Get in Touch</a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 8h16M4 16h16"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-40 pb-24">
+        <!-- Hero Section -->
+        <section class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 mb-32 reveal">
+            <div class="max-w-4xl">
+                <p class="text-xs font-medium uppercase tracking-widest text-accent mb-6">Our Narrative</p>
+                <h1 class="text-5xl sm:text-7xl font-serif font-light leading-tight mb-12">
+                    A legacy built on <br><span class="italic text-muted">intentional stewardship.</span>
+                </h1>
+                <p class="text-xl text-muted font-light leading-relaxed max-w-2xl">
+                    Advet Buildwell isn't just a real estate firm. We are a collective of advisors, architects, and advocates dedicated to the human experience of space. We believe that where you live dictates how you feel.
+                </p>
+            </div>
+        </section>
+
+        <!-- Our Story / Philosophy split -->
+        <section class="bg-surface/30 py-32 mb-32">
+            <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+                <div class="relative aspect-[4/5] image-soft-clip overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1574360301582-c12e204d33a4?auto=format&fit=crop&q=80&w=800" alt="Minimal Studio" class="w-full h-full object-cover grayscale">
+                    <div class="absolute inset-0 bg-accent/10 mix-blend-multiply"></div>
+                </div>
+                <div>
+                    <h2 class="text-4xl font-serif font-light mb-8">Founded in <span class="italic text-muted">Stillness.</span></h2>
+                    <div class="space-y-6 text-muted font-light leading-relaxed">
+                        <p>
+                            Advet Buildwell was established in 2014 with a singular mission: to strip away the transactional noise of the real estate market. We saw a world of "available units" and "square footage," but we searched for "sanctuaries" and "flow."
+                        </p>
+                        <p>
+                            Today, we serve a select group of clients who value architectural integrity over market trends. Whether finding the perfect modernist escape or managing the disposition of a legacy estate, our approach remains small-batch and deeply personal.
+                        </p>
+                        <p>
+                            We are experts in the high-stakes world of buy, sell, and rent, but we treat every transaction as a preservation of a way of life.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Hero Section (Newly Integrated) -->
+        <section class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 mb-32 reveal">
+            <div class="relative h-[600px] md:h-[500px] image-soft-clip overflow-hidden group">
+                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=2000" alt="Service Hero" class="w-full h-full object-cover transition-transform duration-[10s] group-hover:scale-105">
+                <div class="absolute inset-0 bg-foreground/50 backdrop-blur-[1px]"></div>
+                
+                <div class="absolute inset-0 flex flex-col justify-center px-12 md:px-24">
+                    <p class="text-xs font-medium uppercase tracking-[0.4em] text-accent mb-6">Our Expertise</p>
+                    <h2 class="text-white text-4xl md:text-6xl font-serif font-light mb-12 leading-tight">
+                        Precision Brokerage <br><span class="italic opacity-80">Reimagined.</span>
+                    </h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-white/80 font-light">
+                        <div class="border-l border-accent/40 pl-6">
+                            <h4 class="text-lg font-serif text-white mb-2">Acquisition</h4>
+                            <p class="text-xs leading-relaxed uppercase tracking-wider">Strategic Selection</p>
+                        </div>
+                        <div class="border-l border-accent/40 pl-6">
+                            <h4 class="text-lg font-serif text-white mb-2">Disposition</h4>
+                            <p class="text-xs leading-relaxed uppercase tracking-wider">Premium Placement</p>
+                        </div>
+                        <div class="border-l border-accent/40 pl-6">
+                            <h4 class="text-lg font-serif text-white mb-2">Management</h4>
+                            <p class="text-xs leading-relaxed uppercase tracking-wider">Curated Leasing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 mb-32">
+            <div class="text-center mb-20">
+                <p class="text-xs font-medium uppercase tracking-widest text-accent mb-4">The Personnel</p>
+                <h2 class="text-4xl sm:text-5xl font-serif font-light">Discerning <span class="italic text-muted">Advisors</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Person 1 -->
+                <div class="group">
+                    <div class="aspect-[3/4] image-soft-clip overflow-hidden mb-6 bg-surface">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400" alt="Julian Vane" class="w-full h-full object-cover grayscale transition-all group-hover:grayscale-0 group-hover:scale-105 duration-700">
+                    </div>
+                    <h3 class="text-2xl font-serif mb-1 uppercase tracking-tight">Julian Vane</h3>
+                    <p class="text-xs uppercase tracking-widest text-accent font-medium mb-4">Founder & Principal Advisor</p>
+                    <p class="text-sm text-muted font-light italic leading-relaxed">"Real estate is the container for the life you haven't yet lived. We ensure that container is worthy of your time."</p>
+                </div>
+
+                <!-- Person 2 -->
+                <div class="group md:mt-12">
+                    <div class="aspect-[3/4] image-soft-clip overflow-hidden mb-6 bg-surface">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400" alt="Sarah Chen" class="w-full h-full object-cover grayscale transition-all group-hover:grayscale-0 group-hover:scale-105 duration-700">
+                    </div>
+                    <h3 class="text-2xl font-serif mb-1 uppercase tracking-tight">Sarah Chen</h3>
+                    <p class="text-xs uppercase tracking-widest text-accent font-medium mb-4">Head of Curated Leasing</p>
+                    <p class="text-sm text-muted font-light italic leading-relaxed">"Leasing is about fit. We match exceptional lives with spaces that support them, not just house them."</p>
+                </div>
+
+                <!-- Person 3 -->
+                <div class="group md:-mt-6">
+                    <div class="aspect-[3/4] image-soft-clip overflow-hidden mb-6 bg-surface">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400" alt="Liam O' Shea" class="w-full h-full object-cover grayscale transition-all group-hover:grayscale-0 group-hover:scale-105 duration-700">
+                    </div>
+                    <h3 class="text-2xl font-serif mb-1 uppercase tracking-tight">Liam O' Shea</h3>
+                    <p class="text-xs uppercase tracking-widest text-accent font-medium mb-4">Acquisition Specialist</p>
+                    <p class="text-sm text-muted font-light italic leading-relaxed">"Every property has a frequency. My job is to find the one that resonates with our clients' investment soul."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Banner -->
+        <section class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 mb-24">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4 relative">
+                <div class="hidden md:block absolute top-[28px] left-0 w-full h-[1px] bg-sand"></div>
+                
+                <div class="relative z-10 flex flex-col items-center md:items-start group">
+                    <div class="w-14 h-14 rounded-full bg-surface border-4 border-background flex items-center justify-center text-accent font-serif text-xl mb-6">I</div>
+                    <h4 class="text-lg font-medium mb-2">Honesty</h4>
+                    <p class="text-sm font-light text-muted leading-relaxed max-w-[200px]">Absolute transparency in every valuation and contract.</p>
+                </div>
+                
+                <div class="relative z-10 flex flex-col items-center md:items-start group">
+                    <div class="w-14 h-14 rounded-full bg-surface border-4 border-background flex items-center justify-center text-accent font-serif text-xl mb-6">II</div>
+                    <h4 class="text-lg font-medium mb-2">Restraint</h4>
+                    <p class="text-sm font-light text-muted leading-relaxed max-w-[200px]">We represent only what we truly believe in, keeping our portfolio small.</p>
+                </div>
+                
+                <div class="relative z-10 flex flex-col items-center md:items-start group">
+                    <div class="w-14 h-14 rounded-full bg-surface border-4 border-background flex items-center justify-center text-accent font-serif text-xl mb-6">III</div>
+                    <h4 class="text-lg font-medium mb-2">Connection</h4>
+                    <p class="text-sm font-light text-muted leading-relaxed max-w-[200px]">We prioritize the relationship over the closing date.</p>
+                </div>
+                
+                <div class="relative z-10 flex flex-col items-center md:items-start group">
+                    <div class="w-14 h-14 rounded-full bg-surface border-4 border-background flex items-center justify-center text-accent font-serif text-xl mb-6">IV</div>
+                    <h4 class="text-lg font-medium mb-2">Quality</h4>
+                    <p class="text-sm font-light text-muted leading-relaxed max-w-[200px]">Uncompromising focus on architectural and structural excellence.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-foreground text-background pt-32 pb-12 w-full mt-auto">
+        <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
+            
+            <!-- Footer Links Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 mb-24">
+                <div>
+                    <h4 class="text-xs font-medium uppercase tracking-widest text-surface/30 mb-6">Pages</h4>
+                    <ul class="space-y-4">
+                        <li><a href="index.html" class="text-surface/60 hover:text-surface transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-surface/60 hover:text-surface transition-colors">About Us</a></li>
+                        <li><a href="philosophy.html" class="text-surface/60 hover:text-surface transition-colors">Philosophy</a></li>
+                        <li><a href="listings.html" class="text-surface/60 hover:text-surface transition-colors">Listings</a></li>
+                        <li><a href="spaces.html" class="text-surface/60 hover:text-surface transition-colors">Spaces</a></li>
+                        <li><a href="stories.html" class="text-surface/60 hover:text-surface transition-colors">Stories</a></li>
+                        <li><a href="login.html" class="text-surface/60 hover:text-surface transition-colors">Member Login</a></li>
+                        <li><a href="contact.html" class="text-surface/60 hover:text-surface transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-medium uppercase tracking-widest text-surface/30 mb-6">Social</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-surface/60 hover:text-surface transition-colors">Instagram</a></li>
+                        <li><a href="#" class="text-surface/60 hover:text-surface transition-colors">Pinterest</a></li>
+                        <li><a href="#" class="text-surface/60 hover:text-surface transition-colors">LinkedIn</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-2">
+                    <h4 class="text-xs font-medium uppercase tracking-widest text-surface/30 mb-6">Studio</h4>
+                    <p class="text-surface/60 font-light max-w-xs leading-relaxed">
+                        1042 Minimalist Way<br>
+                        Los Angeles, CA 90026<br><br>
+                        <a href="mailto:hello@advetbuildwell.com" class="border-b border-surface/20 hover:border-surface transition-colors">hello@advetbuildwell.com</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Copyright Line -->
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs text-surface/30 font-light gap-4 border-t border-surface/10 pt-8">
+                <div class="flex items-center gap-2">
+                     <svg class="w-5 h-5 text-accent opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3l8 7L12 21l-8-11 8-7z" />
+                    </svg>
+                    Advet Buildwell © 2026. Handcrafted for human emotion.
+                </div>
+                <div class="flex gap-8">
+                    <a href="#" class="hover:text-surface transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-surface transition-colors">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

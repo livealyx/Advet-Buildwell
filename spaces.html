@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spaces | Advet Buildwell</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#FDFCF9',
+                        foreground: '#2A2925',
+                        muted: '#6D685C',
+                        surface: '#F4F0E6',
+                        accent: { DEFAULT: '#899178', dark: '#6E755F' },
+                        sand: '#DFD8CC'
+                    },
+                    fontFamily: {
+                        sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+                        serif: ['"Cormorant Garamond"', 'Playfair Display', 'serif'],
+                    },
+                    borderRadius: { '4xl': '2rem', },
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: theme('colors.background'); color: theme('colors.foreground'); }
+        .image-soft-clip { clip-path: inset(0 round 2rem); }
+        .reveal { opacity: 0; transform: translateY(30px); animation: soft-reveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+        @keyframes soft-reveal { to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="font-sans font-light min-h-screen flex flex-col selection:bg-surface selection:text-foreground">
+
+    <nav class="fixed w-full z-50 bg-background/80 backdrop-blur-md border-b border-sand/30">
+        <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
+            <div class="flex justify-between items-center h-24">
+                <a href="index.html" class="text-2xl font-serif font-medium tracking-wide flex items-center gap-3">
+                    <svg class="w-8 h-8 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 3l8 7L12 21l-8-11 8-7z" /><path d="M12 3v18" /><path d="M4 10l8 4 8-4" /></svg>
+                    Advet <span class="font-light text-muted">Buildwell</span>
+                </a>
+                
+                <div class="hidden md:flex space-x-12 items-center">
+                    <a href="about.html" class="text-sm tracking-wide text-foreground/80 hover:text-accent transition-colors">About</a>
+                    <a href="philosophy.html" class="text-sm tracking-wide text-foreground/80 hover:text-accent transition-colors">Philosophy</a>
+                    <a href="listings.html" class="text-sm tracking-wide text-foreground/80 hover:text-accent transition-colors">Listings</a>
+                    <a href="spaces.html" class="text-sm tracking-wide text-accent transition-colors">Spaces</a>
+                    <a href="stories.html" class="text-sm tracking-wide text-foreground/80 hover:text-accent transition-colors">Stories</a>
+                    <a href="login.html" class="text-sm tracking-wide text-foreground/80 hover:text-accent transition-colors">Login</a>
+                    <a href="contact.html" class="px-6 py-3 rounded-full bg-surface text-foreground hover:bg-sand transition-colors text-sm font-medium border border-sand">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-40 pb-24">
+        <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 reveal">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-sand/30 pb-8 gap-6">
+                <div>
+                    <h1 class="text-5xl font-serif font-light mb-4">Our Spaces</h1>
+                    <p class="text-muted font-light">A curated collection of past and present residences.</p>
+                </div>
+                <div class="flex space-x-4">
+                    <span class="text-sm font-medium border-b border-foreground pb-1">All</span>
+                    <span class="text-sm font-medium text-muted hover:text-foreground hover:border-b hover:border-foreground pb-1 cursor-pointer transition-all">Available</span>
+                    <span class="text-sm font-medium text-muted hover:text-foreground hover:border-b hover:border-foreground pb-1 cursor-pointer transition-all">Past Work</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-20">
+                <!-- Property Card -->
+                <div class="group">
+                    <div class="relative w-full aspect-[4/3] image-soft-clip mb-6 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1628624747186-a941c476b7ef?auto=format&fit=crop&q=80&w=800" alt="Space" class="w-full h-full object-cover transition-transform duration-[8s] group-hover:scale-105">
+                        <span class="absolute top-4 right-4 bg-white/90 px-4 py-2 rounded-full text-xs font-medium">Available Spring 2026</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-serif mb-1 group-hover:text-accent transition-colors">The Courtyard House</h3>
+                        <p class="text-muted font-light text-sm mb-4">Silverlake Hills, CA</p>
+                        <div class="flex gap-4 mb-4">
+                            <span class="bg-surface px-3 py-1 rounded-lg text-xs font-medium">3 Beds</span>
+                            <span class="bg-surface px-3 py-1 rounded-lg text-xs font-medium">3.5 Baths</span>
+                            <span class="bg-surface px-3 py-1 rounded-lg text-xs font-medium">3,200 sqft</span>
+                        </div>
+                        <p class="font-light text-muted text-sm line-clamp-2">Centered around an ancient oak tree, this home merges interior and exterior living spaces seamlessly.</p>
+                    </div>
+                </div>
+
+                <!-- Property Card -->
+                <div class="group md:mt-24">
+                    <div class="relative w-full aspect-[4/3] image-soft-clip mb-6 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=800" alt="Space" class="w-full h-full object-cover transition-transform duration-[8s] group-hover:scale-105">
+                        <span class="absolute top-4 right-4 bg-muted text-white px-4 py-2 rounded-full text-xs font-medium">Sold</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-serif mb-1 group-hover:text-accent transition-colors">The Cliffside Retreat</h3>
+                        <p class="text-muted font-light text-sm mb-4">Big Sur, CA</p>
+                        <div class="flex gap-4 mb-4">
+                            <span class="bg-surface px-3 py-1 rounded-lg text-xs font-medium">4 Beds</span>
+                            <span class="bg-surface px-3 py-1 rounded-lg text-xs font-medium">4 Baths</span>
+                            <span class="bg-surface px-3 py-1 rounded-lg text-xs font-medium">4,500 sqft</span>
+                        </div>
+                        <p class="font-light text-muted text-sm line-clamp-2">A cantilevered marvel that suspends you over the Pacific Ocean, featuring floor-to-ceiling glass and natural stone.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service Excellence Banner -->
+        <section class="relative py-48 overflow-hidden group mt-32">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=2000" alt="Excellence Banner" class="w-full h-full object-cover transition-transform duration-[12s] group-hover:scale-110">
+                <div class="absolute inset-0 bg-foreground/60 backdrop-blur-[2px]"></div>
+            </div>
+            
+            <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 text-center">
+                <p class="text-xs font-medium uppercase tracking-[0.3em] text-accent mb-6">Service Excellence</p>
+                <h2 class="text-5xl md:text-7xl font-serif font-light text-background mb-12 leading-tight">
+                    Buy. Sell. <span class="italic opacity-80">Lease.</span>
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 text-background/80 font-light">
+                    <div>
+                        <h4 class="text-xl font-serif text-background mb-3">Strategic Buy</h4>
+                        <p class="text-sm leading-relaxed mx-auto max-w-[280px]">Finding the untraceable. We secure off-market architectural gems that never reach the public eye.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-serif text-background mb-3">Premium Sell</h4>
+                        <p class="text-sm leading-relaxed mx-auto max-w-[280px]">High-impact storytelling for your asset, ensuring it finds a steward who values its soul.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-serif text-background mb-3">Curated Lease</h4>
+                        <p class="text-sm leading-relaxed mx-auto max-w-[280px]">A seamless bridge between discerning tenants and the world's most intentional spaces.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <a href="contact.html" class="inline-flex items-center justify-center gap-3 bg-accent text-background px-10 py-5 rounded-full hover:bg-accent-dark transition-all transform hover:-translate-y-1 shadow-2xl font-medium">
+                        Inquire About Services
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-foreground text-background pt-32 pb-12 w-full mt-auto">
+        <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
+            
+            <!-- Footer Links Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 mb-24">
+                <div>
+                    <h4 class="text-xs font-medium uppercase tracking-widest text-surface/30 mb-6">Pages</h4>
+                    <ul class="space-y-4">
+                        <li><a href="index.html" class="text-surface/60 hover:text-surface transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-surface/60 hover:text-surface transition-colors">About Us</a></li>
+                        <li><a href="philosophy.html" class="text-surface/60 hover:text-surface transition-colors">Philosophy</a></li>
+                        <li><a href="listings.html" class="text-surface/60 hover:text-surface transition-colors">Listings</a></li>
+                        <li><a href="spaces.html" class="text-surface/60 hover:text-surface transition-colors">Spaces</a></li>
+                        <li><a href="stories.html" class="text-surface/60 hover:text-surface transition-colors">Stories</a></li>
+                        <li><a href="login.html" class="text-surface/60 hover:text-surface transition-colors">Member Login</a></li>
+                        <li><a href="contact.html" class="text-surface/60 hover:text-surface transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-medium uppercase tracking-widest text-surface/30 mb-6">Social</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-surface/60 hover:text-surface transition-colors">Instagram</a></li>
+                        <li><a href="#" class="text-surface/60 hover:text-surface transition-colors">Pinterest</a></li>
+                        <li><a href="#" class="text-surface/60 hover:text-surface transition-colors">LinkedIn</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-2">
+                    <h4 class="text-xs font-medium uppercase tracking-widest text-surface/30 mb-6">Studio</h4>
+                    <p class="text-surface/60 font-light max-w-xs leading-relaxed">
+                        1042 Minimalist Way<br>
+                        Los Angeles, CA 90026<br><br>
+                        <a href="mailto:hello@advetbuildwell.com" class="border-b border-surface/20 hover:border-surface transition-colors">hello@advetbuildwell.com</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Copyright Line -->
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs text-surface/30 font-light gap-4 border-t border-surface/10 pt-8">
+                <div class="flex items-center gap-2">
+                     <svg class="w-5 h-5 text-accent opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3l8 7L12 21l-8-11 8-7z" />
+                    </svg>
+                    Advet Buildwell © 2026. Handcrafted for human emotion.
+                </div>
+                <div class="flex gap-8">
+                    <a href="#" class="hover:text-surface transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-surface transition-colors">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

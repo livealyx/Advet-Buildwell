@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advet Buildwell | Human-Centric Spaces</title>
+    
+    <!-- Local Tailwind CSS setup via CDN for instant preview -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#FDFCF9',
+                        foreground: '#2A2925',
+                        muted: '#6D685C',
+                        surface: '#F4F0E6',
+                        accent: {
+                            DEFAULT: '#899178', // Soft sage green
+                            dark: '#6E755F'
+                        },
+                        sand: '#DFD8CC'
+                    },
+                    fontFamily: {
+                        sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+                        serif: ['"Cormorant Garamond"', 'Playfair Display', 'serif'],
+                    },
+                    borderRadius: {
+                        '4xl': '2rem',
+                    },
+                    transitionTimingFunction: {
+                        'soft': 'cubic-bezier(0.4, 0, 0.2, 1)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts for Humanized Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.foreground');
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .image-soft-clip {
+            clip-path: inset(0 round 2rem);
+        }
+
+        /* Subtle Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: soft-reveal 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+
+        .reveal-delay-1 { animation-delay: 0.2s; }
+        .reveal-delay-2 { animation-delay: 0.4s; }
+
+        @keyframes soft-reveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slow-pan {
+            from { transform: scale(1.05) translate(0, 0); }
+            to { transform: scale(1.1) translate(-2%, 2%); }
+        }
+    </style>
+</head>
+<body class="font-sans font-light min-h-screen flex flex-col selection:bg-surface selection:text-foreground">
+
+    <!-- Navigation -->
+    <nav id="main-nav" class="fixed w-full z-50 transition-all duration-500 py-4">
+        <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="text-2xl font-serif font-medium tracking-wide flex items-center gap-3" id="nav-logo">
+                    <!-- Hugeicons-style geometric logo -->
+                    <svg class="w-8 h-8 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3l8 7L12 21l-8-11 8-7z" />
+                        <path d="M12 3v18" />
+                        <path d="M4 10l8 4 8-4" />
+                    </svg>
+                    <span class="text-white transition-colors duration-500" id="nav-text">Advet <span class="font-light opacity-80">Buildwell</span></span>
+                </a>
+                
+                <div class="hidden md:flex space-x-12 items-center">
+                    <a href="about.html" class="text-sm tracking-wide text-white/80 hover:text-white transition-colors nav-link">About</a>
+                    <a href="philosophy.html" class="text-sm tracking-wide text-white/80 hover:text-white transition-colors nav-link">Philosophy</a>
+                    <a href="listings.html" class="text-sm tracking-wide text-white/80 hover:text-white transition-colors nav-link">Listings</a>
+                    <a href="spaces.html" class="text-sm tracking-wide text-white/80 hover:text-white transition-colors nav-link">Spaces</a>
+                    <a href="stories.html" class="text-sm tracking-wide text-white/80 hover:text-white transition-colors nav-link">Stories</a>
+                    <a href="login.html" class="text-sm tracking-wide text-white/80 hover:text-white transition-colors nav-link">Login</a>
+                    <a href="contact.html" class="px-6 py-3 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20 hover:bg-white hover:text-foreground transition-all text-sm font-medium" id="nav-cta">Get in Touch</a>
+                </div>
+
+                <div class="md:hidden flex items-center text-white">
+                    <!-- Hugeicons Menu -->
+                    <svg class="w-6 h-6 outline-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 8h16M4 16h16"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-[90vh] min-h-[600px] w-full overflow-hidden bg-foreground">
+        <!-- Background Image with Parallax/Zoom effect -->
+        <div class="absolute inset-0 w-full h-full">
+            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=2400" alt="Beautiful minimal architecture" class="w-full h-full object-cover opacity-60 scale-105 animate-[slow-pan_25s_ease-in-out_infinite_alternate]">
+            <div class="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/20 to-transparent"></div>
+        </div>
+
+        <div class="absolute inset-0 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 flex flex-col justify-end pb-24 md:pb-32 z-10 w-full">
+            <div class="reveal">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-surface/30 text-xs font-medium uppercase tracking-widest text-surface mb-6 backdrop-blur-md">
+                    <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                    Redefining Real Estate
+                </div>
+                <h1 class="text-5xl sm:text-7xl md:text-8xl font-serif font-light leading-[1.05] text-background mb-8 max-w-4xl tracking-tight drop-shadow-sm">
+                    We don't just sell houses. <br>
+                    <span class="italic text-surface/80">We curate sanctuaries.</span>
+                </h1>
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 max-w-5xl">
+                    <p class="text-lg md:text-xl text-surface/80 max-w-md font-light leading-relaxed drop-shadow-sm">
+                        Expert guidance in buying, selling, and leasing minimal, intentional spaces. Discover your next chapter with Advet.
+                    </p>
+                    <a href="spaces.html" class="inline-flex items-center justify-center gap-3 text-sm tracking-wide bg-background text-foreground px-8 py-4 rounded-full hover:bg-surface transition-transform hover:-translate-y-1 duration-soft whitespace-nowrap">
+                        Explore Spaces
+                        <!-- Hugeicons Arrow Right -->
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Break -->
+    <section id="philosophy" class="py-24 bg-surface/50">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <svg class="w-8 h-8 text-accent mx-auto mb-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 6v12M6 12h12" />
+                <path d="M4 4h16v16H4z" stroke-dasharray="2 4"/>
+            </svg>
+            <h2 class="text-3xl md:text-5xl font-serif font-light leading-tight mb-8">
+                Spaces that hold space <br><span class="italic text-muted">for you.</span>
+            </h2>
+            <p class="text-muted text-lg font-light leading-relaxed">
+                At Advet Buildwell, we believe your home should be the quietest place in a loud world. We curate properties that strip away the unnecessary, focusing entirely on natural light, organic materials, and flow. Every listing in our portfolio is a deliberate choice.
+            </p>
+        </div>
+    </section>
+
+    <!-- Curated Properties -->
+    <section id="properties" class="py-32 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 w-full">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+            <div>
+                <p class="text-xs font-medium uppercase tracking-widest text-accent mb-4">Our Portfolio</p>
+                <h2 class="text-4xl sm:text-5xl font-serif font-light">Curated <span class="italic text-muted">Residences</span></h2>
+            </div>
+            <a href="#" class="inline-flex items-center gap-2 text-sm font-medium border-b border-muted pb-1 text-muted hover:text-foreground hover:border-foreground transition-colors">
+                View all properties
+                <!-- Hugeicons Arrow Up Right -->
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7 17l10-10M17 7H7M17 7v10" />
+                </svg>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
+            
+            <!-- Property 1 -->
+            <div class="group cursor-pointer">
+                <div class="relative w-full aspect-[4/3] image-soft-clip mb-6 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=800" alt="The Solstice" class="w-full h-full object-cover transition-transform duration-[8s] group-hover:scale-105">
+                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-xs font-medium shadow-sm">
+                        Move-in ready
+                    </div>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-2xl font-serif mb-2 group-hover:text-accent transition-colors">The Solstice House</h3>
+                        <p class="text-muted font-light text-sm flex items-center gap-2">
+                             <!-- Hugeicons Location -->
+                             <svg class="w-4 h-4 opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 21s-8-7.5-8-12a8 8 0 1116 0c0 4.5-8 12-8 12z" />
+                                <path d="M12 11a2 2 0 100-4 2 2 0 000 4z" />
+                            </svg>
+                            Pine Ridge Valley
+                        </p>
+                    </div>
+                    <div class="text-right flex flex-col items-end">
+                        <span class="bg-surface px-3 py-1 rounded-lg text-sm font-medium mb-2">4 Beds, 3 Baths</span>
+                        <span class="text-sm border-b border-transparent group-hover:border-foreground transition-colors">View details</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Property 2 -->
+            <div class="group cursor-pointer md:mt-24">
+                <div class="relative w-full aspect-[4/3] image-soft-clip mb-6 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800" alt="The Haven" class="w-full h-full object-cover transition-transform duration-[8s] group-hover:scale-105">
+                     <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-xs font-medium shadow-sm">
+                        Just Listed
+                    </div>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-2xl font-serif mb-2 group-hover:text-accent transition-colors">The Haven</h3>
+                        <p class="text-muted font-light text-sm flex items-center gap-2">
+                             <!-- Hugeicons Location -->
+                             <svg class="w-4 h-4 opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 21s-8-7.5-8-12a8 8 0 1116 0c0 4.5-8 12-8 12z" />
+                                <path d="M12 11a2 2 0 100-4 2 2 0 000 4z" />
+                            </svg>
+                            Coastal Bluffs
+                        </p>
+                    </div>
+                    <div class="text-right flex flex-col items-end">
+                        <span class="bg-surface px-3 py-1 rounded-lg text-sm font-medium mb-2">3 Beds, 2.5 Baths</span>
+                        <span class="text-sm border-b border-transparent group-hover:border-foreground transition-colors">View details</span>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Property 3 -->
+             <div class="group cursor-pointer">
+                <div class="relative w-full aspect-[4/3] image-soft-clip mb-6 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&q=80&w=800" alt="The Outline" class="w-full h-full object-cover transition-transform duration-[8s] group-hover:scale-105">
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-2xl font-serif mb-2 group-hover:text-accent transition-colors">The Outline</h3>
+                        <p class="text-muted font-light text-sm flex items-center gap-2">
+                             <!-- Hugeicons Location -->
+                             <svg class="w-4 h-4 opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 21s-8-7.5-8-12a8 8 0 1116 0c0 4.5-8 12-8 12z" />
+                                <path d="M12 11a2 2 0 100-4 2 2 0 000 4z" />
+                            </svg>
+                            Urban Minimal District
+                        </p>
+                    </div>
+                    <div class="text-right flex flex-col items-end">
+                        <span class="bg-surface px-3 py-1 rounded-lg text-sm font-medium mb-2">2 Beds, 2 Baths</span>
+                        <span class="text-sm border-b border-transparent group-hover:border-foreground transition-colors">View details</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Property 4 -->
+            <div class="group cursor-pointer md:mt-24">
+                <div class="relative w-full aspect-[4/3] image-soft-clip mb-6 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800" alt="The Terrace" class="w-full h-full object-cover transition-transform duration-[8s] group-hover:scale-105">
+                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-xs font-medium shadow-sm">
+                        Under Construction
+                    </div>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-2xl font-serif mb-2 group-hover:text-accent transition-colors">The Terrace</h3>
+                        <p class="text-muted font-light text-sm flex items-center gap-2">
+                             <!-- Hugeicons Location -->
+                             <svg class="w-4 h-4 opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 21s-8-7.5-8-12a8 8 0 1116 0c0 4.5-8 12-8 12z" />
+                                <path d="M12 11a2 2 0 100-4 2 2 0 000 4z" />
+                            </svg>
+                            Highland Ridge
+                        </p>
+                    </div>
+                    <div class="text-right flex flex-col items-end">
+                        <span class="bg-surface px-3 py-1 rounded-lg text-sm font-medium mb-2">5 Beds, 4 Baths</span>
+                        <span class="text-sm border-b border-transparent group-hover:border-foreground transition-colors">View details</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Real Estate Service Pillars -->
+    <section class="border-y border-sand/30 bg-surface/30">
+        <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-sand/40 text-center">
+            
+            <div class="py-16 px-8 flex flex-col items-center group">
+                <!-- Hugeicons Search/Buy -->
+                <div class="w-16 h-16 rounded-full bg-surface flex items-center justify-center mb-6 group-hover:bg-sand transition-colors">
+                    <svg class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="M21 21l-4.35-4.35" />
+                        <path d="M11 8v6M8 11h6" />
+                    </svg>
+                </div>
+                <h4 class="text-xl font-serif mb-3">Strategic Acquisition</h4>
+                <p class="text-muted font-light text-sm leading-relaxed">
+                    Expert guidance in finding and buying high-value properties that align with your lifestyle and investment goals.
+                </p>
+            </div>
+
+            <div class="py-16 px-8 flex flex-col items-center group">
+                <!-- Hugeicons Tag/Sell -->
+                <div class="w-16 h-16 rounded-full bg-surface flex items-center justify-center mb-6 group-hover:bg-sand transition-colors">
+                    <svg class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z" />
+                        <line x1="7" y1="7" x2="7.01" y2="7" />
+                    </svg>
+                </div>
+                <h4 class="text-xl font-serif mb-3">Premium Disposition</h4>
+                <p class="text-muted font-light text-sm leading-relaxed">
+                    Tailored marketing and negotiation strategies to sell your property at its maximum market potential.
+                </p>
+            </div>
+
+            <div class="py-16 px-8 flex flex-col items-center group">
+                 <!-- Hugeicons Key/Rent -->
+                <div class="w-16 h-16 rounded-full bg-surface flex items-center justify-center mb-6 group-hover:bg-sand transition-colors">
+                    <svg class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3-3.5 3.5z" />
+                    </svg>
+                </div>
+                <h4 class="text-xl font-serif mb-3">Curated Leasing</h4>
+                <p class="text-muted font-light text-sm leading-relaxed">
+                    Connecting discerning tenants with exceptional rental properties through a seamless, high-touch management process.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- The Process -->
+    <section class="py-32 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 w-full text-center md:text-left">
+        <p class="text-xs font-medium uppercase tracking-widest text-accent mb-4">Our Process</p>
+        <h2 class="text-4xl sm:text-5xl font-serif font-light mb-16">The Journey <span class="italic text-muted">to Home</span></h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4 relative">
+            <div class="hidden md:block absolute top-[28px] left-0 w-full h-[1px] bg-sand"></div>
+            
+            <div class="relative z-10 flex flex-col items-center md:items-start group">
+                <div class="w-14 h-14 rounded-full bg-surface border-4 border-background flex items-center justify-center text-accent font-serif text-xl mb-6 group-hover:bg-sand transition-colors">01</div>
+                <h4 class="text-lg font-medium mb-2">Discovery</h4>
+                <p class="text-sm font-light text-muted leading-relaxed max-w-[250px]">We dive deep into your goals to align our search or marketing strategy with your unique vision.</p>
+            </div>
+            
+            <div class="relative z-10 flex flex-col items-center md:items-start group">
+                <div class="w-14 h-14 rounded-full bg-surface border-4 border-background flex items-center justify-center text-accent font-serif text-xl mb-6 group-hover:bg-sand transition-colors">02</div>
+                <h4 class="text-lg font-medium mb-2">Strategy</h4>
+                <p class="text-sm font-light text-muted leading-relaxed max-w-[250px]">Utilizing market intelligence to find off-market gems or position your asset for the right audience.</p>
+            </div>
+            
+            <div class="relative z-10 flex flex-col items-center md:items-start group">
+                <div class="w-14 h-14 rounded-full bg-surface border-4 border-background flex items-center justify-center text-accent font-serif text-xl mb-6 group-hover:bg-sand transition-colors">03</div>
+                <h4 class="text-lg font-medium mb-2">Negotiation</h4>
+                <p class="text-sm font-light text-muted leading-relaxed max-w-[250px]">We handle the complexities of the deal, securing the best possible terms through precise negotiation.</p>
+            </div>
+            
+            <div class="relative z-10 flex flex-col items-center md:items-start group">
+                <div class="w-14 h-14 rounded-full bg-surface border-4 border-background flex items-center justify-center text-accent font-serif text-xl mb-6 group-hover:bg-sand transition-colors">04</div>
+                <h4 class="text-lg font-medium mb-2">Possession</h4>
+                <p class="text-sm font-light text-muted leading-relaxed max-w-[250px]">A seamless transition from signature to key handover, ensuring your new chapter begins effortlessly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Quote -->
+    <section class="bg-foreground text-background py-32">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+             <svg class="w-10 h-10 text-accent mx-auto mb-8 opacity-50" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-light leading-snug mb-8">
+                "Architecture is the learned game, correct and magnificent, of forms assembled in the light."
+            </h2>
+            <p class="text-sm font-medium uppercase tracking-widest text-surface/50">— Le Corbusier</p>
+        </div>
+    </section>
+
+    <!-- Advet By The Numbers -->
+    <section class="py-24 bg-surface/30 border-b border-sand/20">
+        <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+            <div>
+                <p class="text-4xl md:text-5xl font-serif text-accent mb-2">12</p>
+                <p class="text-xs uppercase tracking-widest text-muted font-medium">Years of Expertise</p>
+            </div>
+            <div>
+                <p class="text-4xl md:text-5xl font-serif text-accent mb-2">$1.2B+</p>
+                <p class="text-xs uppercase tracking-widest text-muted font-medium">Portfolio Managed</p>
+            </div>
+            <div>
+                <p class="text-4xl md:text-5xl font-serif text-accent mb-2">98%</p>
+                <p class="text-xs uppercase tracking-widest text-muted font-medium">Client Retention</p>
+            </div>
+            <div>
+                <p class="text-4xl md:text-5xl font-serif text-accent mb-2">240+</p>
+                <p class="text-xs uppercase tracking-widest text-muted font-medium">Curated Sales</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Neighborhood Spotlight -->
+    <section class="py-32 bg-background overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
+            <div class="mb-16">
+                <p class="text-xs font-medium uppercase tracking-widest text-accent mb-4">Regional Expertise</p>
+                <h2 class="text-4xl sm:text-5xl font-serif font-light">Neighborhood <span class="italic text-muted">Spotlight</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Neighborhood 1 -->
+                <div class="group relative aspect-[4/5] image-soft-clip overflow-hidden cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=800" alt="Silverlake" class="w-full h-full object-cover transition-transform duration-[10s] group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-foreground/80 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-8 left-8 right-8 text-white">
+                        <h4 class="text-2xl font-serif mb-2">Silverlake Hills</h4>
+                        <p class="text-white/70 text-sm font-light">The center of architectural modernism and bohemian luxury.</p>
+                        <div class="mt-4 flex items-center gap-2 text-xs font-medium uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
+                            View 12 listings <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Neighborhood 2 -->
+                <div class="group relative aspect-[4/5] image-soft-clip overflow-hidden cursor-pointer md:mt-12">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800" alt="Malibu" class="w-full h-full object-cover transition-transform duration-[10s] group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-foreground/80 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-8 left-8 right-8 text-white">
+                        <h4 class="text-2xl font-serif mb-2">Coastal Bluffs</h4>
+                        <p class="text-white/70 text-sm font-light">Unrivaled seclusion and panoramic horizons along the Pacific.</p>
+                        <div class="mt-4 flex items-center gap-2 text-xs font-medium uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
+                            View 8 listings <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Neighborhood 3 -->
+                <div class="group relative aspect-[4/5] image-soft-clip overflow-hidden cursor-pointer md:-mt-6">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800" alt="Beverly Hills" class="w-full h-full object-cover transition-transform duration-[10s] group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-foreground/80 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-8 left-8 right-8 text-white">
+                        <h4 class="text-2xl font-serif mb-2">The Canyons</h4>
+                        <p class="text-white/70 text-sm font-light">Intimate valleys and terraced estates hidden in plain sight.</p>
+                        <div class="mt-4 flex items-center gap-2 text-xs font-medium uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
+                            View 5 listings <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Perspectives -->
+    <section class="py-24 bg-surface/20">
+        <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-24">
+                <div class="relative">
+                    <div class="aspect-[4/5] image-soft-clip overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&q=80&w=800" alt="Client Home" class="w-full h-full object-cover grayscale opacity-50">
+                    </div>
+                    <div class="absolute -bottom-12 -right-12 w-2/3 aspect-video bg-background p-8 rounded-2xl shadow-2xl border border-sand/30 hidden md:block">
+                        <svg class="w-10 h-10 text-accent mb-4 opacity-50" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
+                        <p class="text-lg font-serif italic text-foreground leading-relaxed">"Advet found us a space that didn't just meet our needs; it mirrored our soul. Their intuition is unmatched."</p>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-xs font-medium uppercase tracking-widest text-accent mb-6">Client Perspectives</p>
+                    <h2 class="text-4xl md:text-6xl font-serif font-light mb-12 leading-tight">Quiet confidence <br><span class="italic text-muted">loudly heard.</span></h2>
+                    
+                    <div class="space-y-12">
+                        <div class="border-l-2 border-accent/20 pl-8 transition-colors hover:border-accent">
+                            <p class="text-xl font-serif italic mb-4">"The negotiation phase was handled with the precision of a master artist. I felt heard, protected, and ultimately, home."</p>
+                            <cite class="text-xs uppercase tracking-widest text-muted font-medium">— Marcus T., Art Curator</cite>
+                        </div>
+                        <div class="border-l-2 border-accent/20 pl-8 transition-colors hover:border-accent">
+                            <p class="text-xl font-serif italic mb-4">"They don't just sell real estate. They represent a way of life that values stillness over noise."</p>
+                            <cite class="text-xs uppercase tracking-widest text-muted font-medium">— Elena R., Architect</cite>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journal Teaser -->
+    <section class="py-32 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 w-full">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+            <div>
+                <p class="text-xs font-medium uppercase tracking-widest text-accent mb-4">Field Notes</p>
+                <h2 class="text-4xl sm:text-5xl font-serif font-light">From the <span class="italic text-muted">Journal</span></h2>
+            </div>
+            <a href="stories.html" class="inline-flex items-center gap-2 text-sm font-medium border-b border-muted pb-1 text-muted hover:text-foreground hover:border-foreground transition-colors">
+                Read all stories
+                <!-- Hugeicons Arrow Up Right -->
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7 17l10-10M17 7H7M17 7v10" />
+                </svg>
+            </a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <a href="stories.html" class="group flex flex-col md:flex-row gap-8 items-center md:items-start cursor-pointer">
+                <div class="w-full md:w-48 aspect-square image-soft-clip overflow-hidden shrink-0">
+                    <img src="https://images.unsplash.com/photo-1544457070-4cd773b4d71e?auto=format&fit=crop&q=80&w=400" alt="Journal" class="w-full h-full object-cover transition-transform duration-[8s] group-hover:scale-105">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-serif mb-2 group-hover:text-accent transition-colors">Designing for the Sun</h3>
+                    <p class="text-muted font-light text-sm line-clamp-3">How we trace the solar path across a plot of land before laying a single foundation stone, allowing natural rhythms to dictate the layout.</p>
+                </div>
+            </a>
+            <a href="stories.html" class="group flex flex-col md:flex-row gap-8 items-center md:items-start cursor-pointer">
+                <div class="w-full md:w-48 aspect-square image-soft-clip overflow-hidden shrink-0">
+                    <img src="https://images.unsplash.com/photo-1595521624992-48a59aef95e3?auto=format&fit=crop&q=80&w=400" alt="Journal" class="w-full h-full object-cover transition-transform duration-[8s] group-hover:scale-105">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-serif mb-2 group-hover:text-accent transition-colors">The Imperfection of Plaster</h3>
+                    <p class="text-muted font-light text-sm line-clamp-3">Why we choose hand-troweled tadelakt walls over perfect dry-wall, embracing the human touch and subtle textures of organic materials.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Service Excellence Banner -->
+    <section class="relative py-48 overflow-hidden group">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000" alt="Excellence Banner" class="w-full h-full object-cover transition-transform duration-[12s] group-hover:scale-110">
+            <div class="absolute inset-0 bg-foreground/60 backdrop-blur-[2px]"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 text-center">
+            <p class="text-xs font-medium uppercase tracking-[0.3em] text-accent mb-6">Service Excellence</p>
+            <h2 class="text-5xl md:text-7xl font-serif font-light text-background mb-12 leading-tight">
+                Buy. Sell. <span class="italic opacity-80">Lease.</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 text-background/80 font-light">
+                <div>
+                    <h4 class="text-xl font-serif text-background mb-3">Strategic Buy</h4>
+                    <p class="text-sm leading-relaxed mx-auto max-w-[280px]">Finding the untraceable. We secure off-market architectural gems that never reach the public eye.</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-serif text-background mb-3">Premium Sell</h4>
+                    <p class="text-sm leading-relaxed mx-auto max-w-[280px]">High-impact storytelling for your asset, ensuring it finds a steward who values its soul.</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-serif text-background mb-3">Curated Lease</h4>
+                    <p class="text-sm leading-relaxed mx-auto max-w-[280px]">A seamless bridge between discerning tenants and the world's most intentional spaces.</p>
+                </div>
+            </div>
+
+            <div>
+                <a href="contact.html" class="inline-flex items-center justify-center gap-3 bg-accent text-background px-10 py-5 rounded-full hover:bg-accent-dark transition-all transform hover:-translate-y-1 shadow-2xl font-medium">
+                    Inquire About Services
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-foreground text-background pt-32 pb-12 w-full mt-auto">
+        <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
+            
+            <!-- Main Footer CTA -->
+            <div id="contact" class="mb-32 text-center md:text-left flex flex-col md:flex-row justify-between items-center md:items-end gap-12">
+                <div class="max-w-xl">
+                    <h2 class="text-4xl sm:text-6xl font-serif font-light mb-8">Ready to come <span class="italic text-sand">home</span>?</h2>
+                    <p class="text-surface/70 text-lg font-light mb-0">
+                        Let's start a conversation about your next chapter. We build only a select number of homes each year to ensure uncompromising quality.
+                    </p>
+                </div>
+                <div class="shrink-0">
+                    <a href="contact.html" class="inline-flex items-center gap-3 bg-surface text-foreground px-10 py-5 rounded-full font-medium hover:bg-white transition-all transform hover:-translate-y-1 shadow-xl">
+                        Connect with Advet
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Footer Links Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 mb-24 border-t border-surface/10 pt-16">
+                <div>
+                    <h4 class="text-xs font-medium uppercase tracking-widest text-surface/30 mb-6">Pages</h4>
+                    <ul class="space-y-4">
+                        <li><a href="index.html" class="text-surface/60 hover:text-surface transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-surface/60 hover:text-surface transition-colors">About</a></li>
+                        <li><a href="philosophy.html" class="text-surface/60 hover:text-surface transition-colors">Philosophy</a></li>
+                        <li><a href="listings.html" class="text-surface/60 hover:text-surface transition-colors">Listings</a></li>
+                        <li><a href="spaces.html" class="text-surface/60 hover:text-surface transition-colors">Spaces</a></li>
+                        <li><a href="stories.html" class="text-surface/60 hover:text-surface transition-colors">Stories</a></li>
+                        <li><a href="login.html" class="text-surface/60 hover:text-surface transition-colors">Member Login</a></li>
+                        <li><a href="contact.html" class="text-surface/60 hover:text-surface transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-medium uppercase tracking-widest text-surface/30 mb-6">Social</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-surface/60 hover:text-surface transition-colors">Instagram</a></li>
+                        <li><a href="#" class="text-surface/60 hover:text-surface transition-colors">Pinterest</a></li>
+                        <li><a href="#" class="text-surface/60 hover:text-surface transition-colors">LinkedIn</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-2">
+                    <h4 class="text-xs font-medium uppercase tracking-widest text-surface/30 mb-6">Studio</h4>
+                    <p class="text-surface/60 font-light max-w-xs leading-relaxed">
+                        1042 Minimalist Way<br>
+                        Los Angeles, CA 90026<br><br>
+                        <a href="mailto:hello@advetbuildwell.com" class="border-b border-surface/20 hover:border-surface transition-colors">hello@advetbuildwell.com</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Copyright Line -->
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs text-surface/30 font-light gap-4 border-t border-surface/10 pt-8">
+                <div class="flex items-center gap-2">
+                     <svg class="w-5 h-5 text-accent opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3l8 7L12 21l-8-11 8-7z" />
+                    </svg>
+                    Advet Buildwell © 2026. Handcrafted for human emotion.
+                </div>
+                <div class="flex gap-8">
+                    <a href="#" class="hover:text-surface transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-surface transition-colors">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const nav = document.getElementById('main-nav');
+        const navText = document.getElementById('nav-text');
+        const navCTA = document.getElementById('nav-cta');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-background/90', 'backdrop-blur-md', 'border-b', 'border-sand/30', 'py-2');
+                nav.classList.remove('bg-transparent', 'py-4');
+                navText.classList.remove('text-white');
+                navText.classList.add('text-foreground');
+                navCTA.classList.remove('bg-white/10', 'text-white', 'border-white/20');
+                navCTA.classList.add('bg-surface', 'text-foreground', 'border-sand');
+                navLinks.forEach(link => {
+                    link.classList.remove('text-white/80', 'hover:text-white');
+                    link.classList.add('text-foreground/80', 'hover:text-accent');
+                });
+            } else {
+                nav.classList.remove('bg-background/90', 'backdrop-blur-md', 'border-b', 'border-sand/30', 'py-2');
+                nav.classList.add('bg-transparent', 'py-4');
+                navText.classList.add('text-white');
+                navText.classList.remove('text-foreground');
+                navCTA.classList.add('bg-white/10', 'text-white', 'border-white/20');
+                navCTA.classList.remove('bg-surface', 'text-foreground', 'border-sand');
+                navLinks.forEach(link => {
+                    link.classList.add('text-white/80', 'hover:text-white');
+                    link.classList.remove('text-foreground/80', 'hover:text-accent');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
