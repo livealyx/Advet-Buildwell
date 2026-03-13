@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Settings | Advet Buildwell</title>
+    <script src="assets/js/tailwind.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#FDFCF9',
+                        foreground: '#2A2925',
+                        muted: '#6D685C',
+                        surface: '#F4F0E6',
+                        accent: { DEFAULT: '#899178', dark: '#6E755F' },
+                        sand: '#DFD8CC'
+                    },
+                    fontFamily: {
+                        sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+                        serif: ['"Cormorant Garamond"', 'Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="assets/css/fonts.css" rel="stylesheet">
+</head>
+<body class="font-sans font-light min-h-screen bg-[#F4F1ED] flex">
+
+    <!-- Sidebar -->
+    <aside class="w-72 bg-foreground text-background flex flex-col hidden lg:flex">
+        <div class="p-12">
+            <a href="index.html" class="text-xl font-serif font-medium tracking-wide flex items-center gap-3">
+                <svg class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 3l8 7L12 21l-8-11 8-7z" /><path d="M12 3v18" /><path d="M4 10l8 4 8-4" /></svg>
+                <span>Advet Studio</span>
+            </a>
+        </div>
+        
+        <nav class="flex-grow px-6 space-y-2">
+            <a href="admin-dashboard.html" class="flex items-center gap-4 px-6 py-4 rounded-2xl text-xs font-medium uppercase tracking-[0.2em] text-background/50 hover:bg-background/5 hover:text-background transition-all">
+                Overview
+            </a>
+            <a href="admin-listings.html" class="flex items-center gap-4 px-6 py-4 rounded-2xl text-xs font-medium uppercase tracking-[0.2em] text-background/50 hover:bg-background/5 hover:text-background transition-all">
+                All Listings
+            </a>
+            <a href="add-property.html" class="flex items-center gap-4 px-6 py-4 rounded-2xl text-xs font-medium uppercase tracking-[0.2em] text-background/50 hover:bg-background/5 hover:text-background transition-all">
+                Add Property
+            </a>
+            <a href="admin-inquiries.html" class="flex items-center gap-4 px-6 py-4 rounded-2xl text-xs font-medium uppercase tracking-[0.2em] text-background/50 hover:bg-background/5 hover:text-background transition-all">
+                Inquiries
+            </a>
+            <a href="admin-analytics.html" class="flex items-center gap-4 px-6 py-4 rounded-2xl text-xs font-medium uppercase tracking-[0.2em] text-background/50 hover:bg-background/5 hover:text-background transition-all">
+                Analytics
+            </a>
+            <a href="admin-settings.html" class="flex items-center gap-4 px-6 py-4 bg-background/5 rounded-2xl text-xs font-medium uppercase tracking-[0.2em] text-accent">
+                Settings
+            </a>
+        </nav>
+
+        <div class="mt-auto p-12 border-t border-background/10">
+            <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full bg-accent flex items-center justify-center font-bold">AV</div>
+                <div>
+                    <p class="text-[10px] font-bold uppercase tracking-widest">Admin</p>
+                    <a href="login.html" class="text-[10px] text-background/40 hover:text-background">Sign Out</a>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="flex-grow p-8 sm:p-12 overflow-y-auto">
+        <header class="mb-16">
+            <p class="text-[10px] font-bold uppercase tracking-[0.4em] text-accent mb-4">Core Preferences</p>
+            <h1 class="text-4xl font-serif font-light mb-4 text-foreground">Studio <span class="italic text-muted">Manifesto.</span></h1>
+            <p class="text-sm text-muted max-w-xl">Configure the architectural frequency and technical parameters of the Advet ecosystem.</p>
+        </header>
+
+        <div class="max-w-4xl space-y-8">
+            <!-- Branding Tokens -->
+            <div class="bg-background p-10 rounded-[2.5rem] shadow-sm border border-sand/40">
+                <h2 class="text-xs uppercase tracking-[0.3em] font-bold text-accent mb-10 border-b border-sand pb-4">Branding Tokens</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <label class="block text-[10px] uppercase tracking-widest font-bold text-muted mb-3 ml-1">Primary Studio Accent</label>
+                        <div class="flex gap-4">
+                            <input type="text" value="#899178" class="flex-grow px-6 py-4 bg-surface/30 border border-sand/30 rounded-2xl text-sm focus:outline-none focus:border-accent">
+                            <div class="w-14 h-14 bg-accent rounded-2xl border border-sand/20 shadow-inner"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] uppercase tracking-widest font-bold text-muted mb-3 ml-1">Surface Geometry</label>
+                        <select class="w-full px-6 py-4 bg-surface/30 border border-sand/30 rounded-2xl text-sm appearance-none focus:outline-none focus:border-accent">
+                            <option>Soft Radius (2.5rem)</option>
+                            <option>Medium Radius (1.5rem)</option>
+                            <option>Sharp Edge (0rem)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Architectural Toggles -->
+            <div class="bg-background p-10 rounded-[2.5rem] shadow-sm border border-sand/40">
+                <h2 class="text-xs uppercase tracking-[0.3em] font-bold text-accent mb-10 border-b border-sand pb-4">Interface Frequency</h2>
+                <div class="space-y-6">
+                    <div class="flex items-center justify-between p-6 bg-surface/10 rounded-3xl border border-sand/20">
+                        <div>
+                            <p class="text-sm font-bold">Atmospheric Reveal</p>
+                            <p class="text-[10px] text-muted uppercase tracking-widest mt-1">Enable scroll-based entrance animations</p>
+                        </div>
+                        <div class="w-12 h-6 bg-accent rounded-full relative cursor-pointer">
+                            <div class="absolute right-1 top-1 w-4 h-4 bg-background rounded-full"></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between p-6 bg-surface/10 rounded-3xl border border-sand/20">
+                        <div>
+                            <p class="text-sm font-bold">Sensory Overlays</p>
+                            <p class="text-[10px] text-muted uppercase tracking-widest mt-1">Display "Acoustic Stillness" and "Light" metrics</p>
+                        </div>
+                        <div class="w-12 h-6 bg-accent rounded-full relative cursor-pointer">
+                            <div class="absolute right-1 top-1 w-4 h-4 bg-background rounded-full"></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between p-6 bg-surface/10 rounded-3xl border border-sand/20">
+                        <div>
+                            <p class="text-sm font-bold">Public Price Transparency</p>
+                            <p class="text-[10px] text-muted uppercase tracking-widest mt-1">Show asking price on initial listing load</p>
+                        </div>
+                        <div class="w-12 h-6 bg-sand/40 rounded-full relative cursor-pointer">
+                            <div class="absolute left-1 top-1 w-4 h-4 bg-background rounded-full shadow-sm"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Communication Frequency -->
+            <div class="bg-background p-10 rounded-[2.5rem] shadow-sm border border-sand/40">
+                <h2 class="text-xs uppercase tracking-[0.3em] font-bold text-accent mb-10 border-b border-sand pb-4">Communication Rhythm</h2>
+                <div class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-widest font-bold text-muted mb-3 ml-1">Newsletter Frequency</label>
+                            <select class="w-full px-6 py-4 bg-surface/30 border border-sand/30 rounded-2xl text-sm appearance-none focus:outline-none focus:border-accent">
+                                <option>Weekly Architecture Digest</option>
+                                <option>Monthly Portfolio Review</option>
+                                <option>Transactional Only</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-widest font-bold text-muted mb-3 ml-1">Inquiry Alert Priority</label>
+                            <select class="w-full px-6 py-4 bg-surface/30 border border-sand/30 rounded-2xl text-sm appearance-none focus:outline-none focus:border-accent">
+                                <option>Immediate Real-time</option>
+                                <option>Daily Batch</option>
+                                <option>Lead Score > 80 Only</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Access & Governance -->
+            <div class="bg-background p-10 rounded-[2.5rem] shadow-sm border border-sand/40">
+                <h2 class="text-xs uppercase tracking-[0.3em] font-bold text-accent mb-10 border-b border-sand pb-4">Access Governance</h2>
+                <div class="space-y-6">
+                    <div class="flex items-center justify-between p-6 bg-surface/10 rounded-3xl border border-sand/20">
+                        <div>
+                            <p class="text-sm font-bold">Multi-Factor Authentication</p>
+                            <p class="text-[10px] text-muted uppercase tracking-widest mt-1">Biometric or Code-based verification for admin login</p>
+                        </div>
+                        <div class="w-12 h-6 bg-accent rounded-full relative cursor-pointer">
+                            <div class="absolute right-1 top-1 w-4 h-4 bg-background rounded-full"></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between p-6 bg-surface/10 rounded-3xl border border-sand/20">
+                        <div>
+                            <p class="text-sm font-bold">API Curation Keys</p>
+                            <p class="text-[10px] text-muted uppercase tracking-widest mt-1">Generate external access tokens for architectural partners</p>
+                        </div>
+                        <button class="text-[10px] uppercase font-bold tracking-widest text-accent underline">Manage Keys</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Global Footer -->
+            <div class="flex gap-4 pt-8">
+                <button class="flex-grow py-5 bg-foreground text-background rounded-2xl text-xs font-bold uppercase tracking-[0.2em] transform hover:-translate-y-1 transition-all shadow-xl hover:shadow-2xl">
+                    Sync Global Manifest
+                </button>
+                <button class="px-12 py-5 border border-sand text-muted rounded-2xl text-xs font-bold uppercase tracking-[0.2em] hover:bg-surface transition-all">
+                    Reset to Default
+                </button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

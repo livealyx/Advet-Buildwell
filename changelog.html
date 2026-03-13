@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Changelog | Advet Buildwell</title>
     
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/tailwind.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -30,9 +30,9 @@
         }
     </script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+    
+    
+    <link href="assets/css/fonts.css" rel="stylesheet">
 
     <style>
         body { background-color: theme('colors.background'); color: theme('colors.foreground'); -webkit-font-smoothing: antialiased; }
@@ -54,6 +54,7 @@
                 </a>
                 
                 <div class="hidden md:flex space-x-10 items-center">
+                    <a href="index.html" class="text-sm tracking-wide text-foreground/80 hover:text-accent transition-colors">Home</a>
                     <a href="about.html" class="text-sm tracking-wide text-foreground/80 hover:text-accent transition-colors">About Us</a>
                     <a href="philosophy.html" class="text-sm tracking-wide text-foreground/80 hover:text-accent transition-colors">Philosophy</a>
                     <a href="listings.html" class="text-sm tracking-wide text-foreground/80 hover:text-accent transition-colors">Listings</a>
@@ -75,16 +76,126 @@
                 <p class="text-xl text-muted font-light leading-relaxed">Tracking the architectural development and structural refinement of the Advet Buildwell digital presence.</p>
             </header>
 
-            <!-- Version v1.0.0 -->
-            <section class="reveal" style="animation-delay: 0.2s;">
+            <!-- Version v1.2.0 -->
+            <section class="reveal" style="animation-delay: 0.1s;">
                 <div class="flex flex-col md:flex-row gap-12 border-t border-sand pt-12">
                     <div class="md:w-1/4">
-                        <h2 class="text-3xl font-serif font-light mb-2">v1.0.0</h2>
-                        <p class="text-[10px] uppercase tracking-widest font-bold text-accent">The Initial Reveal</p>
-                        <p class="text-xs text-muted mt-4">March 12, 2026</p>
+                        <h2 class="text-3xl font-serif font-light mb-2">v1.2.0</h2>
+                        <p class="text-[10px] uppercase tracking-widest font-bold text-accent">The Advisory Phase</p>
+                        <p class="text-xs text-muted mt-4">March 13, 2026</p>
                     </div>
                     
                     <div class="md:w-3/4 space-y-16">
+                        
+                        <!-- Admin Analytics Expansion -->
+                        <div>
+                            <h3 class="text-xs uppercase tracking-[0.3em] font-bold text-foreground mb-8 pb-4 border-b border-sand/30">Analytics & Intelligence</h3>
+                            <ul class="space-y-6 ml-8">
+                                <li class="log-line">
+                                    <h4 class="text-sm font-bold uppercase tracking-wider mb-2">Admin Analytics Portal</h4>
+                                    <p class="text-sm text-muted font-light leading-relaxed">Launched a dedicated Analytics page (`admin-analytics.html`) featuring demographic doughnuts, conversion funnels, and regional demand data grids using custom-tailored Chart.js integrations.</p>
+                                </li>
+                                <li class="log-line">
+                                    <h4 class="text-sm font-bold uppercase tracking-wider mb-2">Market Frequency Dashboard</h4>
+                                    <p class="text-sm text-muted font-light leading-relaxed">Integrated a sophisticated Valuation Growth line chart into the central Admin Dashboard, alongside new 'Asset Health' optimization trackers.</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Admin Settings & Security -->
+                        <div>
+                            <h3 class="text-xs uppercase tracking-[0.3em] font-bold text-foreground mb-8 pb-4 border-b border-sand/30">Governance & Settings</h3>
+                            <ul class="space-y-6 ml-8">
+                                <li class="log-line">
+                                    <h4 class="text-sm font-bold uppercase tracking-wider mb-2">Studio Settings Portal</h4>
+                                    <p class="text-sm text-muted font-light leading-relaxed">Released `admin-settings.html` to centralize platform configuration. Allows real-time toggling of 'Atmospheric Reveal' animations, MFA security policies, and newsletter communication rhythms.</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Property Engine Refinements -->
+                        <div>
+                            <h3 class="text-xs uppercase tracking-[0.3em] font-bold text-foreground mb-8 pb-4 border-b border-sand/30">Curation Engine Updates</h3>
+                            <ul class="space-y-6 ml-8">
+                                <li class="log-line">
+                                    <h4 class="text-sm font-bold uppercase tracking-wider mb-2">Atmospheric Property Inputs</h4>
+                                    <p class="text-sm text-muted font-light leading-relaxed">Updated the `add-property.html` flow to capture nuanced architectural data, including "Sensory Layers" (e.g., Morning Light) and Material Palettes, synchronizing perfectly with the consumer-facing detail pages.</p>
+                                </li>
+                                <li class="log-line">
+                                    <h4 class="text-sm font-bold uppercase tracking-wider mb-2">Structural Stability Fixes</h4>
+                                    <p class="text-sm text-muted font-light leading-relaxed">Cured gallery overlapping bugs in property detail views by switching from fixed heights to responsive aspect ratios (`aspect-video`, `aspect-[4/3]`) and optimized the global Admin sidebar width (`w-80`) across all portals.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Version v1.1.0 -->
+            <section class="reveal" style="animation-delay: 0.2s;">
+                <div class="flex flex-col md:flex-row gap-12 border-t border-sand pt-12">
+                    <div class="md:w-1/4">
+                        <h2 class="text-3xl font-serif font-light mb-2">v1.1.0</h2>
+                        <p class="text-[10px] uppercase tracking-widest font-bold text-accent">The Refinement Phase</p>
+                        <p class="text-xs text-muted mt-4">March 13, 2026</p>
+                    </div>
+                    
+                    <div class="md:w-3/4 space-y-16">
+                        
+                        <!-- Offline Capabilities -->
+                        <div>
+                            <h3 class="text-xs uppercase tracking-[0.3em] font-bold text-foreground mb-8 pb-4 border-b border-sand/30">Asset Localization</h3>
+                            <ul class="space-y-6 ml-8">
+                                <li class="log-line">
+                                    <h4 class="text-sm font-bold uppercase tracking-wider mb-2">Offline-Ready Architecture</h4>
+                                    <p class="text-sm text-muted font-light leading-relaxed">Migrated all core CSS and JavaScript dependencies from external CDNs to the local `assets/` directory. This includes Tailwind CSS and Google Fonts (DM Sans, Cormorant Garamond).</p>
+                                </li>
+                                <li class="log-line">
+                                    <h4 class="text-sm font-bold uppercase tracking-wider mb-2">Local Image Preservation</h4>
+                                    <p class="text-sm text-muted font-light leading-relaxed">Began transitioning from Unsplash API to locally stored high-fidelity imagery, starting with the "Sanctuary 04" listing.</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Global Features -->
+                        <div>
+                            <h3 class="text-xs uppercase tracking-[0.3em] font-bold text-foreground mb-8 pb-4 border-b border-sand/30">Global Enhancements</h3>
+                            <ul class="space-y-6 ml-8">
+                                <li class="log-line">
+                                    <h4 class="text-sm font-bold uppercase tracking-wider mb-2">Field Notes Newsletter</h4>
+                                    <p class="text-sm text-muted font-light leading-relaxed">Integrated a standardized newsletter subscription feature into the brand footer across all 12+ public and utility pages.</p>
+                                </li>
+                                <li class="log-line">
+                                    <h4 class="text-sm font-bold uppercase tracking-wider mb-2">Unified Footer Design</h4>
+                                    <p class="text-sm text-muted font-light leading-relaxed">Refined the global footer to a 12-column grid system, ensuring perfect alignment of pages, social links, and studio contact information.</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Administrative Tools -->
+                        <div>
+                            <h3 class="text-xs uppercase tracking-[0.3em] font-bold text-foreground mb-8 pb-4 border-b border-sand/30">Admin Core Updates</h3>
+                            <ul class="space-y-6 ml-8">
+                                <li class="log-line">
+                                    <h4 class="text-sm font-bold uppercase tracking-wider mb-2">Standardized Admin Sidebar</h4>
+                                    <p class="text-sm text-muted font-light leading-relaxed">Unified the navigation patterns for internal tools, ensuring a consistent experience across the Dashboard, Listing Management, and Inquiry Portals.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Version v1.0.0 -->
+            <section class="reveal mt-32" style="animation-delay: 0.3s;">
+                <div class="flex flex-col md:flex-row gap-12 border-t border-sand pt-12">
+                    <div class="md:w-1/4">
+                        <h2 class="text-3xl font-serif font-light mb-2 text-muted">v1.0.0</h2>
+                        <p class="text-[10px] uppercase tracking-widest font-bold text-muted/50">The Initial Reveal</p>
+                        <p class="text-xs text-muted/40 mt-4">March 12, 2026</p>
+                    </div>
+                    
+                    <div class="md:w-3/4 space-y-16 grayscale opacity-60">
                         
                         <!-- Core Architecture -->
                         <div>
@@ -92,69 +203,14 @@
                             <ul class="space-y-6 ml-8">
                                 <li class="log-line">
                                     <h4 class="text-sm font-bold uppercase tracking-wider mb-2">Unified Navigation System</h4>
-                                    <p class="text-sm text-muted font-light leading-relaxed">Deployed a consistent, high-fidelity navigation bar across all 12 core pages, featuring backdrop-blur effects and intentional spacing for readability.</p>
-                                </li>
-                                <li class="log-line">
-                                    <h4 class="text-sm font-bold uppercase tracking-wider mb-2">Global Brand Footer</h4>
-                                    <p class="text-sm text-muted font-light leading-relaxed">Integrated a comprehensive footer providing direct access to deep-site mapping, social channels, and studio contact points.</p>
+                                    <p class="text-sm text-muted font-light leading-relaxed">Deployed a consistent, high-fidelity navigation bar across all 12 core pages.</p>
                                 </li>
                                 <li class="log-line">
                                     <h4 class="text-sm font-bold uppercase tracking-wider mb-2">Visual Identity System</h4>
-                                    <p class="text-sm text-muted font-light leading-relaxed">Established the "Advet Aesthetic" - a color palette rooted in earth tones (Sage, Sand, Bone) and a typographic hierarchy blending modern Sans with traditional Serif.</p>
+                                    <p class="text-sm text-muted font-light leading-relaxed">Established the "Advet Aesthetic" - Sage, Sand, and Bone palette.</p>
                                 </li>
                             </ul>
                         </div>
-
-                        <!-- Public Interface -->
-                        <div>
-                            <h3 class="text-xs uppercase tracking-[0.3em] font-bold text-foreground mb-8 pb-4 border-b border-sand/30">Public Interface</h3>
-                            <ul class="space-y-6 ml-8">
-                                <li class="log-line">
-                                    <h4 class="text-sm font-bold uppercase tracking-wider mb-2">The Narrative Suite</h4>
-                                    <p class="text-sm text-muted font-light leading-relaxed">Created `About Us`, `Philosophy`, and `Stories` pages to articulate the brand's vision of intentional stewardship and architectural integrity.</p>
-                                </li>
-                                <li class="log-line">
-                                    <h4 class="text-sm font-bold uppercase tracking-wider mb-2">Inventory Discovery</h4>
-                                    <p class="text-sm text-muted font-light leading-relaxed">Developed the `Listings` search engine and `Spaces` gallery, allowing users to browse available and past sanctuaries with filtered search capabilities.</p>
-                                </li>
-                                <li class="log-line">
-                                    <h4 class="text-sm font-bold uppercase tracking-wider mb-2">Object Detail Views</h4>
-                                    <p class="text-sm text-muted font-light leading-relaxed">Launched the flagship `property-detail` page for "The Obsidian Villa," featuring monolithic image galleries and neighborhood spotlights.</p>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Private Portals (Admin) -->
-                        <div>
-                            <h3 class="text-xs uppercase tracking-[0.3em] font-bold text-foreground mb-8 pb-4 border-b border-sand/30">Advisory Portals</h3>
-                            <ul class="space-y-6 ml-8">
-                                <li class="log-line">
-                                    <h4 class="text-sm font-bold uppercase tracking-wider mb-2">Admin Dashboard</h4>
-                                    <p class="text-sm text-muted font-light leading-relaxed">Engineered a private workspace environment (`admin-dashboard.html`) for high-level oversight of assets, inquiries, and market volume.</p>
-                                </li>
-                                <li class="log-line">
-                                    <h4 class="text-sm font-bold uppercase tracking-wider mb-2">Portfolio Management</h4>
-                                    <p class="text-sm text-muted font-light leading-relaxed">Deployed the `admin-listings` portal and `add-property` tool, enabling the curation and lifecycle management of the real estate portfolio.</p>
-                                </li>
-                                <li class="log-line">
-                                    <h4 class="text-sm font-bold uppercase tracking-wider mb-2">Communication Hub</h4>
-                                    <p class="text-sm text-muted font-light leading-relaxed">Established `admin-inquiries.html` for tracking and responding to prospective client interest with priority-based labeling.</p>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Refinements -->
-                        <div>
-                            <h3 class="text-xs uppercase tracking-[0.3em] font-bold text-foreground mb-8 pb-4 border-b border-sand/30">Technical Refinements</h3>
-                            <ul class="space-y-4 ml-8 text-sm text-muted font-light">
-                                <li>· Implemented `soft-reveal` animations using CSS Keyframes for a fluid user experience.</li>
-                                <li>· Standardized form inputs across Login, Register, Contact, and Admin pages.</li>
-                                <li>· Optimized responsive layouts for mobile, tablet, and desktop viewports.</li>
-                                <li>· Replaced redundant `auth.html` with discrete Login and Registration flows.</li>
-                                <li>· Refined Admin UI by removing public footers to prioritize functional efficiency.</li>
-                            </ul>
-                        </div>
-
                     </div>
                 </div>
             </section>
@@ -165,28 +221,59 @@
     <!-- Footer -->
     <footer class="bg-foreground text-background pt-32 pb-12 w-full mt-auto">
         <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 mb-24">
-                <div>
+            <!-- Footer Links Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-24 border-t border-surface/10 pt-16">
+                <div class="md:col-span-2">
                     <h4 class="text-xs font-medium uppercase tracking-widest text-surface/30 mb-6">Pages</h4>
-                    <ul class="space-y-4">
+                    <ul class="space-y-4 text-sm">
                         <li><a href="index.html" class="text-surface/60 hover:text-surface transition-colors">Home</a></li>
                         <li><a href="about.html" class="text-surface/60 hover:text-surface transition-colors">About</a></li>
+                        <li><a href="philosophy.html" class="text-surface/60 hover:text-surface transition-colors">Philosophy</a></li>
                         <li><a href="listings.html" class="text-surface/60 hover:text-surface transition-colors">Listings</a></li>
+                        <li><a href="spaces.html" class="text-surface/60 hover:text-surface transition-colors">Spaces</a></li>
+                        <li><a href="stories.html" class="text-surface/60 hover:text-surface transition-colors">Stories</a></li>
+                        <li><a href="login.html" class="text-surface/60 hover:text-surface transition-colors">Member Login</a></li>
                         <li><a href="contact.html" class="text-surface/60 hover:text-surface transition-colors">Contact</a></li>
-                        <li><a href="changelog.html" class="text-surface/60 hover:text-surface transition-colors">Changelog</a></li>
                     </ul>
                 </div>
-                <div>
+                <div class="md:col-span-2">
                     <h4 class="text-xs font-medium uppercase tracking-widest text-surface/30 mb-6">Social</h4>
-                    <ul class="space-y-4">
+                    <ul class="space-y-4 text-sm">
                         <li><a href="#" class="text-surface/60 hover:text-surface transition-colors">Instagram</a></li>
                         <li><a href="#" class="text-surface/60 hover:text-surface transition-colors">Pinterest</a></li>
                         <li><a href="#" class="text-surface/60 hover:text-surface transition-colors">LinkedIn</a></li>
                     </ul>
                 </div>
-                <div class="col-span-2 text-right">
-                    <h4 class="text-xs font-medium uppercase tracking-widest text-surface/30 mb-6 italic">Handcrafted for Human Emotion</h4>
-                    <p class="text-surface/30 text-[10px] uppercase tracking-[0.5em]">Advet Buildwell © 2026</p>
+                <div class="md:col-span-3">
+                    <h4 class="text-xs font-medium uppercase tracking-widest text-surface/30 mb-6">Studio</h4>
+                    <p class="text-surface/60 font-light text-sm leading-relaxed">
+                        1042 Minimalist Way<br>
+                        Los Angeles, CA 90026<br><br>
+                        <a href="mailto:hello@advetbuildwell.com" class="border-b border-surface/20 hover:border-surface transition-colors">hello@advetbuildwell.com</a>
+                    </p>
+                </div>
+                <div class="md:col-span-5">
+                    <h4 class="text-xs font-medium uppercase tracking-widest text-surface/30 mb-6">Field Notes</h4>
+                    <p class="text-surface/60 font-light text-sm leading-relaxed mb-8">
+                        Join our mailing list for off-market listings and architectural insights delivered to your inbox.
+                    </p>
+                    <form class="relative group">
+                        <input type="email" placeholder="Email Address" class="w-full bg-surface/5 border border-surface/10 rounded-full pl-6 pr-32 py-4 text-sm text-surface focus:outline-none focus:border-accent transition-all placeholder:text-surface/20">
+                        <button type="submit" class="absolute right-2 top-2 bottom-2 bg-surface text-foreground px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-white transition-all">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <!-- Copyright Line -->
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs text-surface/30 font-light gap-4 border-t border-surface/10 pt-8">
+                <div class="flex items-center gap-2">
+                     <svg class="w-5 h-5 text-accent opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3l8 7L12 21l-8-11 8-7z" />
+                    </svg>
+                    Advet Buildwell © 2026. Handcrafted for human emotion.
+                </div>
+                <div class="flex gap-8">
+                    <a href="#" class="hover:text-surface transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-surface transition-colors">Terms of Use</a>
                 </div>
             </div>
         </div>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | Advet Buildwell</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/tailwind.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -25,12 +25,13 @@
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+    <link href="assets/css/fonts.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="font-sans font-light min-h-screen bg-[#F4F1ED] flex">
 
     <!-- Sidebar -->
-    <aside class="w-72 bg-foreground text-background flex flex-col hidden lg:flex">
+    <aside class="w-80 flex-shrink-0 bg-foreground text-background flex flex-col hidden lg:flex">
         <div class="p-12">
             <a href="index.html" class="text-xl font-serif font-medium tracking-wide flex items-center gap-3">
                 <svg class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 3l8 7L12 21l-8-11 8-7z" /><path d="M12 3v18" /><path d="M4 10l8 4 8-4" /></svg>
@@ -51,6 +52,12 @@
             <a href="admin-inquiries.html" class="flex items-center gap-4 px-6 py-4 rounded-2xl text-xs font-medium uppercase tracking-[0.2em] text-background/50 hover:bg-background/5 hover:text-background transition-all">
                 Inquiries
             </a>
+            <a href="admin-analytics.html" class="flex items-center gap-4 px-6 py-4 rounded-2xl text-xs font-medium uppercase tracking-[0.2em] text-background/50 hover:bg-background/5 hover:text-background transition-all">
+                Analytics
+            </a>
+            <a href="admin-settings.html" class="flex items-center gap-4 px-6 py-4 rounded-2xl text-xs font-medium uppercase tracking-[0.2em] text-background/50 hover:bg-background/5 hover:text-background transition-all">
+                Settings
+            </a>
         </nav>
 
         <div class="mt-auto p-12 border-t border-background/10">
@@ -70,8 +77,17 @@
             <div>
                 <p class="text-[10px] font-bold uppercase tracking-[0.4em] text-accent mb-4">Advisory Portal</p>
                 <h1 class="text-4xl font-serif font-light italic">Good morning, Julian.</h1>
+                <div class="flex items-center gap-3 mt-6">
+                    <span class="flex items-center gap-2 px-3 py-1 bg-accent/10 rounded-full text-[9px] font-bold uppercase tracking-widest text-accent border border-accent/20">
+                        <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span> System Operational
+                    </span>
+                    <span class="text-[9px] uppercase tracking-widest text-muted font-medium">Last Sync: 2m ago</span>
+                </div>
             </div>
             <div class="flex gap-4">
+                <button class="px-6 py-4 bg-surface text-foreground rounded-2xl text-[10px] font-bold uppercase tracking-widest border border-sand hover:bg-sand transition-all">
+                    System Audit
+                </button>
                 <a href="add-property.html" class="px-8 py-4 bg-foreground text-background rounded-2xl text-xs font-bold uppercase tracking-widest shadow-xl hover:-translate-y-1 transition-all">
                     New Listing +
                 </a>
@@ -94,6 +110,75 @@
                 <p class="text-[10px] uppercase tracking-widest font-bold text-muted mb-6">Total Volume</p>
                 <h3 class="text-5xl font-serif">$82.4M</h3>
                 <p class="text-xs text-accent mt-4 font-medium uppercase tracking-widest">AUM · 2026</p>
+            </div>
+        </div>
+        
+        <!-- Main Content Area -->
+        <div class="grid grid-cols-1 min-[1400px]:grid-cols-4 gap-8 mb-16">
+            
+            <!-- Market Analytics Chart (Spans 3 columns) -->
+            <div class="min-[1400px]:col-span-3 bg-background p-10 rounded-[2.5rem] shadow-sm border border-sand/40">
+                <div class="flex justify-between items-center mb-12">
+                    <div>
+                        <h3 class="text-xs uppercase tracking-[0.3em] font-bold text-foreground">Market Frequency</h3>
+                        <p class="text-[10px] text-muted mt-1 uppercase tracking-widest">Portfolio Valuation Growth · Last 6 Months</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-muted">
+                            <span class="w-3 h-3 rounded-full bg-accent"></span> Current Year
+                        </span>
+                    </div>
+                </div>
+                <div class="h-[400px]">
+                    <canvas id="marketChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Sanctuary Health (Sidebar Metric) -->
+            <div class="min-[1400px]:col-span-1 space-y-8">
+                <div class="bg-background p-8 rounded-[2.5rem] shadow-sm border border-sand/40">
+                    <h3 class="text-[10px] uppercase tracking-[0.3em] font-bold text-foreground mb-8">Asset Health</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between text-[10px] uppercase tracking-widest font-bold mb-3">
+                                <span class="text-muted">Documentation</span>
+                                <span>94%</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-surface rounded-full overflow-hidden">
+                                <div class="w-[94%] h-full bg-accent"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-[10px] uppercase tracking-widest font-bold mb-3">
+                                <span class="text-muted">Inquiry Depth</span>
+                                <span>68%</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-surface rounded-full overflow-hidden">
+                                <div class="w-[68%] h-full bg-accent"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-[10px] uppercase tracking-widest font-bold mb-3">
+                                <span class="text-muted">Market Position</span>
+                                <span>82%</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-surface rounded-full overflow-hidden">
+                                <div class="w-[82%] h-full bg-accent/40"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="w-full mt-10 py-4 border border-sand text-[10px] font-bold uppercase tracking-widest rounded-2xl hover:bg-surface transition-all">
+                        Optimize Portfolio
+                    </button>
+                </div>
+
+                <div class="bg-accent text-background p-8 rounded-[2.5rem] shadow-lg shadow-accent/20">
+                    <h3 class="text-[10px] uppercase tracking-[0.3em] font-bold mb-6">Studio Insight</h3>
+                    <p class="text-sm font-serif italic mb-6">"Sustainability is no longer a luxury choice, but an architectural frequency."</p>
+                    <div class="flex items-center gap-4 text-[9px] uppercase tracking-[0.2em] font-bold opacity-60">
+                        <span class="border-b border-background/40 pb-1">Read Studio Report</span>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -149,5 +234,60 @@
 
     </main>
 
+    <script>
+        const ctx = document.getElementById('marketChart').getContext('2d');
+        const marketChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar'],
+                datasets: [{
+                    label: 'Market Value (M)',
+                    data: [62, 68, 65, 74, 78, 82.4],
+                    backgroundColor: '#899178',
+                    hoverBackgroundColor: '#6E755F',
+                    borderRadius: 12,
+                    borderSkipped: false,
+                    barThickness: 40
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: '#2A2925',
+                        titleFont: { family: 'DM Sans', size: 10 },
+                        bodyFont: { family: 'DM Sans', size: 12 },
+                        padding: 12,
+                        displayColors: false,
+                        callbacks: {
+                            label: function(context) {
+                                return `$${context.parsed.y}M Analytics`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        grid: { color: 'rgba(223, 216, 204, 0.3)', drawBorder: false },
+                        ticks: {
+                            color: '#6D685C',
+                            font: { family: 'DM Sans', size: 10 },
+                            callback: function(value) { return '$' + value + 'M'; }
+                        }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: {
+                            color: '#6D685C',
+                            font: { family: 'DM Sans', size: 10 }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>

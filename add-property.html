@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Property | Advet Buildwell</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/tailwind.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -25,7 +25,7 @@
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+    <link href="assets/css/fonts.css" rel="stylesheet">
     <style>
         body { background-color: theme('colors.background'); color: theme('colors.foreground'); -webkit-font-smoothing: antialiased; }
         .form-reveal { opacity: 0; transform: translateY(20px); animation: fadeIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
@@ -39,7 +39,7 @@
 <body class="font-sans font-light min-h-screen bg-[#F4F1ED] flex">
 
     <!-- Sidebar -->
-    <aside class="w-72 bg-foreground text-background flex flex-col hidden lg:flex">
+    <aside class="w-80 flex-shrink-0 bg-foreground text-background flex flex-col hidden lg:flex">
         <div class="p-12">
             <a href="index.html" class="text-xl font-serif font-medium tracking-wide flex items-center gap-3">
                 <svg class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 3l8 7L12 21l-8-11 8-7z" /><path d="M12 3v18" /><path d="M4 10l8 4 8-4" /></svg>
@@ -59,6 +59,12 @@
             </a>
             <a href="admin-inquiries.html" class="flex items-center gap-4 px-6 py-4 rounded-2xl text-xs font-medium uppercase tracking-[0.2em] text-background/50 hover:bg-background/5 hover:text-background transition-all">
                 Inquiries
+            </a>
+            <a href="admin-analytics.html" class="flex items-center gap-4 px-6 py-4 rounded-2xl text-xs font-medium uppercase tracking-[0.2em] text-background/50 hover:bg-background/5 hover:text-background transition-all">
+                Analytics
+            </a>
+            <a href="admin-settings.html" class="flex items-center gap-4 px-6 py-4 rounded-2xl text-xs font-medium uppercase tracking-[0.2em] text-background/50 hover:bg-background/5 hover:text-background transition-all">
+                Settings
             </a>
         </nav>
 
@@ -115,7 +121,7 @@
                 <!-- Section: Spatial Specs -->
                 <div class="bg-background p-8 md:p-12 rounded-[2.5rem] shadow-sm border border-sand/40">
                     <h2 class="text-xs uppercase tracking-[0.3em] font-bold text-accent mb-10 border-b border-sand pb-4">Spatial Metrics</h2>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
                         <div>
                             <label class="block text-[10px] uppercase tracking-widest font-bold text-muted mb-3 ml-1">Bedrooms</label>
                             <input type="number" class="w-full px-6 py-4 bg-surface/30 border border-sand/30 rounded-2xl text-sm transition-all focus:bg-background">
@@ -133,14 +139,69 @@
                             <input type="text" placeholder="Acres" class="w-full px-6 py-4 bg-surface/30 border border-sand/30 rounded-2xl text-sm transition-all focus:bg-background">
                         </div>
                     </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-widest font-bold text-muted mb-3 ml-1">Primary Volumes (e.g. Great Room: 850sqft)</label>
+                            <textarea rows="3" placeholder="Enter one volume per line..." class="w-full px-6 py-4 bg-surface/30 border border-sand/30 rounded-2xl text-sm transition-all focus:bg-background resize-none"></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-widest font-bold text-muted mb-3 ml-1">Material Palette (e.g. Raw Travertine, Smoked Oak)</label>
+                            <textarea rows="3" placeholder="Enter materials separated by commas..." class="w-full px-6 py-4 bg-surface/30 border border-sand/30 rounded-2xl text-sm transition-all focus:bg-background resize-none"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section: Atmosphere -->
+                <div class="bg-background p-8 md:p-12 rounded-[2.5rem] shadow-sm border border-sand/40">
+                    <h2 class="text-xs uppercase tracking-[0.3em] font-bold text-accent mb-10 border-b border-sand pb-4">Atmospheric Layers</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-widest font-bold text-muted mb-3 ml-1">Layer 01 (e.g. Morning Light)</label>
+                            <input type="text" placeholder="Feature Title" class="w-full px-6 py-4 bg-surface/30 border border-sand/30 rounded-2xl text-sm mb-4 transition-all focus:bg-background">
+                            <textarea rows="3" placeholder="Sensory description..." class="w-full px-6 py-4 bg-surface/30 border border-sand/30 rounded-2xl text-sm transition-all focus:bg-background resize-none"></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-widest font-bold text-muted mb-3 ml-1">Layer 02 (e.g. Acoustic Stillness)</label>
+                            <input type="text" placeholder="Feature Title" class="w-full px-6 py-4 bg-surface/30 border border-sand/30 rounded-2xl text-sm mb-4 transition-all focus:bg-background">
+                            <textarea rows="3" placeholder="Sensory description..." class="w-full px-6 py-4 bg-surface/30 border border-sand/30 rounded-2xl text-sm transition-all focus:bg-background resize-none"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section: Interior Sanctuaries -->
+                <div class="bg-background p-8 md:p-12 rounded-[2.5rem] shadow-sm border border-sand/40">
+                    <h2 class="text-xs uppercase tracking-[0.3em] font-bold text-accent mb-10 border-b border-sand pb-4">Interior Sanctuaries</h2>
+                    <div class="space-y-8">
+                        <div class="p-6 bg-surface/20 rounded-3xl border border-sand/20">
+                            <p class="text-[10px] uppercase tracking-widest font-bold text-muted mb-4 uppercase">Primary Room (The Great Hall)</p>
+                            <textarea rows="2" placeholder="Describe the soul of this room..." class="w-full px-6 py-4 bg-surface/30 border border-sand/30 rounded-2xl text-sm transition-all focus:bg-background resize-none"></textarea>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="p-6 bg-surface/20 rounded-3xl border border-sand/20">
+                                <p class="text-[10px] uppercase tracking-widest font-bold text-muted mb-4 uppercase">Room 02 (The Culinary Lab)</p>
+                                <textarea rows="2" placeholder="Room details..." class="w-full px-6 py-4 bg-surface/30 border border-sand/30 rounded-2xl text-sm transition-all focus:bg-background resize-none"></textarea>
+                            </div>
+                            <div class="p-6 bg-surface/20 rounded-3xl border border-sand/20">
+                                <p class="text-[10px] uppercase tracking-widest font-bold text-muted mb-4 uppercase">Room 03 (Owner's Retreat)</p>
+                                <textarea rows="2" placeholder="Room details..." class="w-full px-6 py-4 bg-surface/30 border border-sand/30 rounded-2xl text-sm transition-all focus:bg-background resize-none"></textarea>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Section: Narrative -->
                 <div class="bg-background p-8 md:p-12 rounded-[2.5rem] shadow-sm border border-sand/40">
-                    <h2 class="text-xs uppercase tracking-[0.3em] font-bold text-accent mb-10 border-b border-sand pb-4">Narrative & Soul</h2>
-                    <div>
-                        <label class="block text-[10px] uppercase tracking-widest font-bold text-muted mb-3 ml-1">Description</label>
-                        <textarea rows="6" placeholder="Describe the frequency and flow of the space..." class="w-full px-6 py-4 bg-surface/30 border border-sand/30 rounded-3xl text-sm transition-all focus:bg-background custom-scrollbar resize-none"></textarea>
+                    <h2 class="text-xs uppercase tracking-[0.3em] font-bold text-accent mb-10 border-b border-sand pb-4">Narrative & Neighborhood</h2>
+                    <div class="space-y-8">
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-widest font-bold text-muted mb-3 ml-1">Full Property Story</label>
+                            <textarea rows="6" placeholder="Describe the frequency and flow of the space..." class="w-full px-6 py-4 bg-surface/30 border border-sand/30 rounded-3xl text-sm transition-all focus:bg-background custom-scrollbar resize-none"></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-widest font-bold text-muted mb-3 ml-1">Neighborhood Spotlight (e.g. Silverlake Hills)</label>
+                            <textarea rows="3" placeholder="What makes this location iconic?" class="w-full px-6 py-4 bg-surface/30 border border-sand/30 rounded-2xl text-sm transition-all focus:bg-background resize-none"></textarea>
+                        </div>
                     </div>
                 </div>
 
@@ -167,12 +228,7 @@
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-foreground text-background py-12">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-[10px] uppercase tracking-[0.4em] font-medium text-surface/20">Authorized Access Only · Advet Buildwell © 2026</p>
-        </div>
-    </footer>
+
 
 </body>
 </html>
